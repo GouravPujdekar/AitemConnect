@@ -1,0 +1,38 @@
+[13-Aug-2019 12:26:41 Asia/Kolkata] PHP Fatal error:  Cannot redeclare PurchaseOrder_m::AddPurchase() in /home/algos1zm/public_html/Sales/application/models/PurchaseOrder_m.php on line 167
+[13-Aug-2019 12:26:43 Asia/Kolkata] PHP Fatal error:  Cannot redeclare PurchaseOrder_m::AddPurchase() in /home/algos1zm/public_html/Sales/application/models/PurchaseOrder_m.php on line 167
+[13-Aug-2019 12:26:53 Asia/Kolkata] PHP Fatal error:  Cannot redeclare PurchaseOrder_m::AddPurchase() in /home/algos1zm/public_html/Sales/application/models/PurchaseOrder_m.php on line 167
+[13-Aug-2019 12:26:55 Asia/Kolkata] PHP Fatal error:  Cannot redeclare PurchaseOrder_m::AddPurchase() in /home/algos1zm/public_html/Sales/application/models/PurchaseOrder_m.php on line 167
+[13-Aug-2019 12:26:56 Asia/Kolkata] PHP Fatal error:  Cannot redeclare PurchaseOrder_m::AddPurchase() in /home/algos1zm/public_html/Sales/application/models/PurchaseOrder_m.php on line 167
+[14-Aug-2019 10:44:39 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllpurchase() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 45
+[14-Aug-2019 10:44:39 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllpurchase() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 45
+[14-Aug-2019 10:49:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllpurchase() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 45
+[14-Aug-2019 10:49:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllpurchase() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 45
+[14-Aug-2019 10:50:53 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllpurchase() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 45
+[14-Aug-2019 10:50:53 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllpurchase() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 45
+[19-Aug-2019 15:55:05 Asia/Kolkata] PHP Fatal error:  Cannot redeclare IncentiveEligible_m::GetAlltotalPoValue() in /home/algos1zm/public_html/Sales/application/models/IncentiveEligible_m.php on line 23
+[31-Aug-2019 17:01:15 Asia/Kolkata] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/algos1zm/public_html/Sales/application/views/email.php on line 3
+[21-Sep-2019 17:58:40 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:40 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:40 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:40 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:40 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:45 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:45 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:45 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:45 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:58:45 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:17 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:41 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:41 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:41 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:41 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[21-Sep-2019 17:59:41 Asia/Kolkata] PHP Fatal error:  Cannot redeclare SalesManager_m::GetAllclientt() in /home/algos1zm/public_html/Sales/application/models/SalesManager_m.php on line 108
+[18-Oct-2020 18:37:26 Asia/Kolkata] PHP Fatal error:  Cannot use [] for reading in /home/a2jobb269bwz/public_html/AitemConnect/application/models/Register_m.php on line 49
+[18-Oct-2020 18:52:12 Asia/Kolkata] PHP Fatal error:  Cannot use [] for reading in /home/a2jobb269bwz/public_html/AitemConnect/application/models/Register_m.php on line 50
+[21-Oct-2020 06:10:22 UTC] PHP Fatal error:  Cannot redeclare Home::login() in /home/a2jobb269bwz/public_html/AitemConnect/application/controllers/Home.php on line 41
+[21-Oct-2020 06:10:30 UTC] PHP Fatal error:  Cannot redeclare Home::login() in /home/a2jobb269bwz/public_html/AitemConnect/application/controllers/Home.php on line 41
+[21-Oct-2020 06:14:18 UTC] PHP Fatal error:  Cannot redeclare Home::login() in /home/a2jobb269bwz/public_html/AitemConnect/application/controllers/Home.php on line 41

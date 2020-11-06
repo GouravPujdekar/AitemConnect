@@ -1,0 +1,78 @@
+﻿.container-fluid{
+    margin: 50px;
+}
+#t1{
+    height:50px;
+    background-color:black;
+    color:white;
+    padding-top:10px;
+}
+.address{
+    margin-top: 50px;
+}
+.center{
+    width: 150px;
+    margin: 40px auto;      
+    }    
+#t2 {    
+    padding-left: 50px;
+    border: outset 1px;
+    border-radius:8px;
+    height:320px;
+}
+#t3 {
+    border: dashed 1px;   
+    padding: 30px 50px 30px 50px;  
+}
+#t4 {
+    border: outset 1px;
+    border-radius: 8px;
+    height: 200px;
+    padding: 30px;
+}
+#t5 {
+    border-radius: 8px;
+    border: outset 1px;
+    height: 70px;
+    padding:20px;    
+}
+#t6 {
+    border:outset 1px;
+   padding:30px;
+    border-radius:8px;
+    height: 300px;
+}
+#t7{
+    border:outset 1px;
+    border-radius:8px;
+    padding:30px;
+}
+.number-input{
+    border:1px outset ;
+    border-radius: 12px;
+    width:110px;
+    margin-left:120px;   
+}
+.quantity{
+    width:34px;
+    text-align:center;
+    border: white;
+}
+.minus{
+    margin:5px;
+    border: none;
+    background-color: white;
+}
+.plus{
+    color: blue;
+    margin:5px;
+    border: none;
+    background-color: white;
+}
+.Panel-group{
+    width: 500px;
+    margin: 0 auto;
+}
+#btn{
+    width: 100px;    
+}
