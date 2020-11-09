@@ -41,14 +41,19 @@
                    
                     <ul class="search-area">
                         <li>
+                            <?php
+                                $username=  $this->session->userdata('username'); 
+                                if(isset($username)){ 
+                                  ?>
                             <a id="cart-button" href="<?php echo site_url("Home/Cart");?>" >
                                 <i class="flaticon-shopping-cart" style="margin-top:5px;"></i>
                             </a>
+                             <?php }?>
                         </li>
                           <li >
                               <?php
-                                $authToken=  $this->session->userdata('authToken'); 
-                                if(isset($authToken)){ 
+                                $username=  $this->session->userdata('username'); 
+                                if(isset($username)){ 
                                   ?>
                             <a href="<?php echo site_url("Logout");?>" style="margin-left:-8px;">
                             <i class="fa fa-power-off"></i>Logout
