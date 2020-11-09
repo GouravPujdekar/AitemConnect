@@ -26,7 +26,8 @@ class Register_m extends CI_Model
       function getAllStoresProducts() {   
          /* API URL */
          $postData = json_decode(file_get_contents('php://input'));
-        // $storeId = $this->input->get("storeId");   
+         $storeId = $this->input->get("storeId");   
+       
          $token=$this->session->userdata('authToken');  
          $tr="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
          $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
@@ -34,19 +35,21 @@ class Register_m extends CI_Model
          /* Init cURL resource 
          $params = 'a0c2e01e-6940-455b-af68-b5e49dd0abb0';
          $url = $uurl . '?storeId=' . $params;
-*/
+         */
+      
          $ch = curl_init();
          //curl_setopt($ch, CURLOPT_URL, $url);
-         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/items');
+         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS,$storeId);
-         curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$tr,'Content-Type: application/json', 'Accept: application/json'));
+         //curl_setopt($ch, CURLOPT_POSTFIELDS,$storeId);
+         curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$t,'Content-Type: application/json', 'Accept: application/json'));
          $out = curl_exec($ch);
             if ($out === false) {
             echo 'Curl error : ' . curl_error($ch);
             }   
-         curl_close($ch);     
+         curl_close($ch);  
+     
       return $out;    
       }
     function loginUser() {
@@ -80,8 +83,7 @@ class Register_m extends CI_Model
          ];      
         $this->session->set_userdata($newdata);
         return $out;
-    }
-     
+    }     
     
     function registerUser() {
         
@@ -166,7 +168,7 @@ class Register_m extends CI_Model
          $url = 'http://18.188.222.175:8080/items';   
          /* Init cURL resource */
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/items');
+         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
          //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
