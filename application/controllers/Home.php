@@ -15,39 +15,74 @@ class Home extends CI_Controller {
       }        
       function AllStores()
       { 
+	$username = $this->session->userdata('username');
+        if (!empty($username)) {
         $this->load->view('comman/header');    
-        $this->load->view('allstores');    
+        $this->load->view('allstores');   
+	}else{
+	 redirect(base_url(), 'refresh');
+	}
       }      
       function AddStore()
       { 
+	$username = $this->session->userdata('username');
+        if (!empty($username)) {
         $this->load->view('comman/header');    
-        $this->load->view('addstore');    
+        $this->load->view('addstore');  
+	}else{
+	 redirect(base_url(), 'refresh');
+	}
       } 
       function AddItem()
       { 
+	$username = $this->session->userdata('username');
+        if (!empty($username)) {
         $this->load->view('comman/header');    
-        $this->load->view('additem');    
+        $this->load->view('additem'); 
+	}else{
+	 redirect(base_url(), 'refresh');
+	}
       }   
       function Shop()
-	    {     
+	{
+	$username = $this->session->userdata('username');
+        if (!empty($username)) {
         $this->load->view('comman/header');    
-        $this->load->view('shop');        
+        $this->load->view('shop');   
+	 }else{
+	 redirect(base_url(), 'refresh');
+	}
       } 
       function Cart()
-	    {     
+	{
+	$username = $this->session->userdata('username');
+        if (!empty($username)) {
         $this->load->view('comman/hed');    
-        $this->load->view('cart');        
+        $this->load->view('cart');
+	 }else{
+	 redirect(base_url(), 'refresh');
+	}
       } 
-      function AllStoreProduct() {        
+      function AllStoreProduct() {
+	 $username = $this->session->userdata('username');
+        if (!empty($username)) {
         $this->load->view('comman/header');    
-        $this->load->view('allproduct');   
+        $this->load->view('allproduct');
+	 }else{
+	 redirect(base_url(), 'refresh');
+	}
       }
       function Login() {         
         $this->load->view('login');   
       }
-      function Product() {        
+      function Product() {
+	$username = $this->session->userdata('username');
+        if (!empty($username)) {
         $this->load->view('comman/header');    
-        $this->load->view('product');   
+        $this->load->view('product');
+	}else{
+	 redirect(base_url(), 'refresh');
+	}
       }
       function Register() {
      
