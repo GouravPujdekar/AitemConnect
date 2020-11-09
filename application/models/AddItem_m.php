@@ -9,7 +9,7 @@ class AddItem_m extends CI_Model
       $pictureId=$postData->pictureId; 
       $name=$postData->name;   
       $quantity=$postData->quantity;
-      $price=$postData->price; 
+      $price=$postData->price;     
       $description=$postData->description; 
       $shortDescription=$postData->shortDescription;
       $sku=$postData->sku; 
