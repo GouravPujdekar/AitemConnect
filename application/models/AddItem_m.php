@@ -39,11 +39,11 @@ class AddItem_m extends CI_Model
       $d=json_encode($data);
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/items');
+      curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/stores/'.$storeId.'/items');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
-      curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$t,'Content-Type: application/json', 'Accept: application/json'));
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$token,'Content-Type: application/json', 'Accept: application/json'));
       $out = curl_exec($ch);
          if ($out === false) {
          echo 'Curl error : ' . curl_error($ch);
