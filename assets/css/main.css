@@ -651,6 +651,7 @@ input[type="submit"] {
 
 #cart-button, .widget.widget-archive ul li, .widget.widget-category ul li, .post-item .post-thumb, .blockquote-item .blog-blockquote {
     position: relative;
+    color:blue;
 }
 
 .theme-overlay-deep::before,
@@ -2002,13 +2003,13 @@ footer.style-two .footer-top .footer-widget.footer-schedule ul li a {
 
 #cart-button::after {
     position: absolute;
-    content: "19";
+    /*content: "19";*/
     font-size: 12px;
     width: 25px;
     height: 25px;
     text-align: center;
     line-height: 26px;
-    background: #2560d4;
+   /* background: #2560d4;*/
     color: #fff;
     top: 0px;
     right: -5px;
