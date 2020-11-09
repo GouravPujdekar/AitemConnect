@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/swiper.min.css');?>">
     
     <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css');?>">
-    <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.png');?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo base_url('assets/images/thumbnail.png');?>" type="image/x-icon">
  
 
     <script src="<?php echo base_url('assets/angular/angular.min.js'); ?>"></script>
