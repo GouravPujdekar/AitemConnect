@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/odometer.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/swiper.min.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/nice-select.css');?>">
-      <link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.png');?>" type="image/x-icon">
+      <link rel="shortcut icon" href="<?php echo base_url('assets/images/thumbnail.png');?>" type="image/x-icon">
    
 </head>
   <!-- ==========privacy-section========== -->
@@ -46,14 +46,27 @@
                     </ul>                   
                     <ul class="search-area">
                         <li>
+                          <?php
+                                $authToken=  $this->session->userdata('username'); 
+                                if(isset($authToken)){ 
+                                  ?>
                             <a id="cart-button" href="#0" >
                                 <i class="flaticon-shopping-cart" style="margin-top:5px;"></i>
                             </a>
+                          <?php }?>
                         </li>
-                          <li >
-                            <a href="<?php echo site_url("Home/Login");?>" style="margin-left:-8px;">
+                          <li>
+                            <?php $authToken=  $this->session->userdata('username'); 
+                                if(isset($authToken)){ 
+                                  ?>
+                             <a href="<?php echo site_url("Logout");?>" style="margin-left:-8px;">
+                            <i class="fa fa-power-off"></i>Logout
+                            </a>                          
+                            <?php } else {?>
+                             <a href="<?php echo site_url("Home/Login");?>" style="margin-left:-8px;">
                              Login
                             </a>
+                            <?php }?>
                         </li>
                     </ul>
                 </div>
