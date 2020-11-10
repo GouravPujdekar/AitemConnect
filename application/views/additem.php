@@ -34,7 +34,7 @@
                             <div class="form-group" id="visibilityDiv">
                              <label >Status</label>
                               <select type="text" class="form-control" ng-model="status" id="status">
-                                <option value="">Profile Type</option>
+                                <option value="">Status</option>
                                 <option value="ACTIVE">ACTIVE</option>
                                 <option value="IN_ACTIVE">IN_ACTIVE</option>
                                 <option value="AVAILABLE">AVAILABLE</option>
