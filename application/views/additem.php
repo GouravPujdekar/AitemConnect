@@ -36,7 +36,8 @@
                               <select type="text" class="form-control" ng-model="status" id="status">
                                 <option value="">Profile Type</option>
                                 <option value="ACTIVE">ACTIVE</option>
-                                <option value="INACTIVE">INACTIVE</option>
+                                <option value="IN_ACTIVE">IN_ACTIVE</option>
+                                <option value="AVAILABLE">AVAILABLE</option>
                                 </select>                           
                             </div>
                             <div class="form-group" id="websiteDiv">
