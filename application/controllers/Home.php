@@ -20,7 +20,8 @@ class Home extends CI_Controller {
         $this->load->view('comman/header');    
         $this->load->view('allstores');   
 	}else{
-	 redirect(base_url(), 'refresh');
+		 $this->load->view('login'); 
+	 //redirect(base_url(), 'refresh');
 	}
       }      
       function AddStore()
@@ -29,9 +30,8 @@ class Home extends CI_Controller {
         if (!empty($username)) {
         $this->load->view('comman/header');    
         $this->load->view('addstore');  
-	}else{
-		  $this->load->view('login');   
-	// redirect(base_url(), 'refresh');
+	}else{		   
+	redirect(base_url(), 'refresh');
 	}
       } 
       function AddItem()
