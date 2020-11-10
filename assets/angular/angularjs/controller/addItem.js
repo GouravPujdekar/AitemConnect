@@ -193,7 +193,7 @@ app.controller('addItemCtrl', function($http, $scope, toastr){
            $scope.$apply(function($scope) {
                for (var i = 0; i < element.files.length; i++) {
                   $scope.filess = element.files[i];
-                  $scope.filess.push(element.files[i]);    
+                 // $scope.filess.push(element.files[i]);    
                   var file=$scope.filess;               
 
                    toastr.success(file.name);                  
