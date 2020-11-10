@@ -75,11 +75,12 @@ class Register_m extends CI_Model
             }
          curl_close($ch);
         // var_dump($out); 
-         $var = json_decode($out, true);     
+         $var = json_decode($out, true);  
+        $var2 = json_decode($d, true);      
          $newdata = [               
             'api-key-token'=>$var['authToken'],           
             'role' =>$var['profileType'],
-           'username'=>$d[0]['username'],
+            'username'=>$var2['username'],
             'logged_in' => TRUE
          ];      
         $this->session->set_userdata($newdata);
