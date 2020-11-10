@@ -16,8 +16,41 @@ app.controller('addItemCtrl', function($http, $scope, toastr){
             && $scope.website && $scope.weight)  { 
               $scope.loader=true;  
               console.log($scope.files);
-              console.log($scope.fname);
-              $http.post(site_url + 'AddItem/addItemIntoStore',{                   
+              console.log($scope.filess);
+
+              $http({
+                method: 'POST',
+                url: site_url + 'AddItem/addItemIntoStore',
+                processData: false,
+                transformRequest: function(data) {
+                    var formData = new FormData();
+                   // for (var i in $scope.files) {
+                        formData.append("file", $scope.filess);
+                  //  }                   
+                   // formData.append("pictureId",  $scope.fname);                                              
+                    formData.append("storeId", $scope.storeId);
+                    formData.append("name",$scope.name);
+                    formData.append("quantity", $scope.quantity);
+                    formData.append("price", $scope.price);
+                    formData.append("description", $scope.description);
+                    formData.append("shortDescription", $scope.shortDescription);
+                    formData.append("sku", $scope.sku);
+                    formData.append("status", $scope.status);
+                    formData.append("type", $scope.type);
+                    formData.append("visibility", $scope.visibility);
+                    formData.append("website", $scope.website);
+                    formData.append("weight",  $scope.weight);                                     
+                    return formData;
+                },
+                data: $scope.form,
+                headers: {
+                  'Content-Type': undefined
+                }
+            }).then(function(response) {    
+
+
+
+              /*$http.post(site_url + 'AddItem/addItemIntoStore',{                   
                  
                 'pictureId' : $scope.fname,
                 'storeId' : $scope.storeId,    
@@ -34,7 +67,7 @@ app.controller('addItemCtrl', function($http, $scope, toastr){
                 'weight' : $scope.weight,
              
             }).
-                then((response) => {            
+                then((response) => {   */         
                   
                 // alert(response.data);
                  console.log(response);
@@ -42,6 +75,7 @@ app.controller('addItemCtrl', function($http, $scope, toastr){
                   $scope.loader=false;  
                   toastr.warning("Something went wrong");
                  }else if(response.data){
+                   console.log(response.data);
                   toastr.success('Item added successfully..');                 
                   $scope.loader=false;
                   $scope.name = "";
@@ -158,9 +192,10 @@ app.controller('addItemCtrl', function($http, $scope, toastr){
       $scope.uploadedFile = function(element) {       
            $scope.$apply(function($scope) {
                for (var i = 0; i < element.files.length; i++) {
-                  $scope.files = element.files[i];
-                  var file=$scope.files;
-                  $scope.fname=file.name;
+                  $scope.filess = element.files[i];
+                  $scope.filess.push(element.files[i]);    
+                  var file=$scope.filess;               
+
                    toastr.success(file.name);                  
                }
            });
