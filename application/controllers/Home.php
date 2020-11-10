@@ -51,7 +51,8 @@ class Home extends CI_Controller {
         $this->load->view('comman/header');    
         $this->load->view('shop');   
 	 }else{
-	 redirect(base_url(), 'refresh');
+		$this->load->view('login'); 
+	 //redirect(base_url(), 'refresh');
 	}
       } 
       function Cart()
