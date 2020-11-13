@@ -40,7 +40,7 @@
     border:outset 1px;
    padding:30px;
     border-radius:8px;
-    height: 300px;
+    height: 320px;
 }
 #t7{
     border:outset 1px;
@@ -50,8 +50,8 @@
 .number-input{
     border:1px outset ;
     border-radius: 12px;
-    width:110px;
-    margin-left:120px;   
+    width:120px;
+    margin-left:80px;   
 }
 .quantity{
     width:34px;
@@ -75,6 +75,10 @@
 }
 #btn{
     width: 100px;    
+}
+#btncheckout{
+    margin:0 auto;
+    float: left;
 }
 
 /* Style the tab */
