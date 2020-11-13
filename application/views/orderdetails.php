@@ -13,7 +13,7 @@
 <body  ng-app="myApp" ng-controller="orderCtrl" ng-init="init()">
 <div class="container">
 <div class="ak col-sm-12">
-<p>Kartik</p>
+
 
 <div class="tab responsive">
   <button class="tablinks" onclick="openCity(event, 'Order')">Order List</button>
