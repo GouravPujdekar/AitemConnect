@@ -6,12 +6,12 @@ app.controller('addstoreCtrl', function($http, $scope, toastr){
       }
   
    $scope.addRetailerStore = function() {
-        var retrievedObjectt = window.localStorage.getItem('shopDetails');
-        var parsedObjectt = JSON.parse(retrievedObjectt);       
-        $scope.detailsList=parsedObjectt;       
-        $scope.id=$scope.detailsList[0].id;
-        console.log($scope.id);
-          if ($scope.id && $scope.addressName && $scope.streetAddress && $scope.zip && $scope.email && $scope.city && $scope.state && $scope.mobile)  { 
+       // var retrievedObjectt = window.localStorage.getItem('shopDetails');
+       // var parsedObjectt = JSON.parse(retrievedObjectt);       
+       // $scope.detailsList=parsedObjectt;       
+       // $scope.id=$scope.detailsList[0].id;
+      //  console.log($scope.id);
+          if ($scope.addressName && $scope.streetAddress && $scope.zip && $scope.email && $scope.city && $scope.state && $scope.mobile)  { 
               $scope.loader=true;  
               $http.post(site_url + 'AddStore/addStore',{                   
                  
@@ -23,7 +23,7 @@ app.controller('addstoreCtrl', function($http, $scope, toastr){
                   'zip' : $scope.zip,
                   'email' : $scope.email,
                   'phone' : $scope.mobile,
-                  'retailerUserId' : $scope.id,
+                 // 'retailerUserId' : $scope.id,
                   'website' : $scope.website,
               }).
                   then((response) => {  
@@ -41,8 +41,9 @@ app.controller('addstoreCtrl', function($http, $scope, toastr){
                       $scope.streetAddress1="";
                       $scope.zip="";
                       $scope.website="";   
-                      $scope.loader = false;               
-                      var url = 'Product';
+                      $scope.loader = false;   
+
+                      var url = 'Shop';
                       window.location = url;                    
                     
                   }
