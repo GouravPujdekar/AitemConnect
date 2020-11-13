@@ -5,7 +5,7 @@ class AddStore_m extends CI_Model
  function addStore() {
   
     $postData = json_decode(file_get_contents('php://input'));   
-    $retailerUserId=$postData->retailerUserId;     
+  //  $retailerUserId=$postData->retailerUserId;     
     $email=$postData->email; 
     $phone=$postData->phone;   
     $website=$postData->website;
@@ -29,7 +29,7 @@ class AddStore_m extends CI_Model
      ),
      'email'=>$email,
      'phone'=>$phone,    
-     'retailerUserId'=>$retailerUserId, 
+    // 'retailerUserId'=>$retailerUserId, 
      'website'=>$website,    
      );  
     $d=json_encode($data);
