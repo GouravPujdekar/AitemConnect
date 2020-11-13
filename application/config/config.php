@@ -37,6 +37,8 @@ $config['base_url'] = 'http://3.131.82.166/AitemConnect/';
 */
 $config['index_page'] = 'index.php';
 
+$config['stripe_key'] = 'pk_test_51H9gu9Fcsm2Bi9S2VwgA4PKSAUUwA65wxto7takSJEhTYrIR3B7jmgvCCwsyWpjOpVFADhRlfN9wISZaAC7AfeuW00jjrDrfGw';
+$config['stripe_secret'] = 'rk_test_51H9gu9Fcsm2Bi9S27WSfXw2q6kRbz3u344qs0CVCLWYVbLsTDt58h6vRWmSyLgQkapXisyVUI8KSYzu8szTTPiGt007Ob33avs';
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
