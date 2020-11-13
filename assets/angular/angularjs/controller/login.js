@@ -17,37 +17,44 @@ app.controller('loginCtrl', function($http, $scope, toastr,$location){
                 then((response) => {  
                     console.log(response);
                     console.log(response.data);
-              if (response) {
-                $scope.loader=false;  
+              if (response.data && response.data["profileType"]=="RETAILER" || response.data["profileType"]=="SHOPPER") {
+                    $scope.loader=false;  
                     toastr.success('Login successfully.');
                     $scope.username="";
-                    $scope.password="";
-                    $scope.loader = false; 
+                    $scope.password="";                                     
                     var url = 'Shop';
-                    window.location = url;
-                                    
-                }
+                    window.location = url;                                    
+                }else if (response.data && response.data["profileType"]=="CUSTOMER") {
+                  $scope.loader=false;  
+                  toastr.success('Login successfully.');
+                  $scope.username="";
+                  $scope.password="";                                     
+                  var url = 'AllStores';
+                  window.location = url;                                    
+              }
                 else if (response.data == 0) {
                   $scope.loader=false;  
                     toastr.error('Failed to Login.');
                     $scope.username="";
-                  $scope.password="";
-              
-                   // $scope.loader = false;
-                }                
+                    $scope.password="";              
+                }  
+                else if (response.data == -1) {
+                  $scope.loader=false;  
+                    toastr.error('User Not Found Please Register.');
+                    $scope.username="";
+                    $scope.password="";              
+                }                  
                 else {
                   $scope.loader=false;  
-                    toastr.error('Opps! Something went wrong.');
+                    toastr.error('Opps! Something went wrong!.');
                     $scope.username="";
-                  $scope.password="";
-                  //  $scope.loader = false;
+                    $scope.password="";                  
                 }            
             }, (error) => {
-              $scope.loader=false;  
+              $scope.loader=false;               
                   toastr.error(error.statusText);
                   $scope.username="";
-                  $scope.password="";
-                // $scope.loader = false;
+                  $scope.password="";             
               })
           }
         else{ 
