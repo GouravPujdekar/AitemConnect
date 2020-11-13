@@ -33,7 +33,11 @@ app.controller('productCtrl', function($http, $scope, toastr){
                 }else if(response.data==0){
                     toastr.warning("Products are not available");
                 }else{           
-                    $scope.loader=false;        
+                    $scope.loader=false; 
+                     var decodedString = atob($scope.productListt[0]['pictureId']);
+                    console.log(decodedString);  
+                    $scope.productimg= decodedString; 
+                    console.log($scope.productimg);  
                     $scope.productList = $scope.productListt;
                     console.log($scope.productList);
                 }
