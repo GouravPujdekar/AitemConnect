@@ -108,7 +108,7 @@ class AddItem_m extends CI_Model
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
-      curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$t,'Content-Type: application/json', 'Accept: application/json'));
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$token,'Content-Type: application/json', 'Accept: application/json'));
       $out = curl_exec($ch);
          if ($out === false) {
          echo 'Curl error : ' . curl_error($ch);
