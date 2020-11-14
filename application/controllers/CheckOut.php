@@ -72,7 +72,7 @@ class CheckOut extends CI_Controller {
 				$date = date("Y-m-d H:i:s");
 			
 				$d =array(
-				'billingName'=>$status,											
+				'billingName'=>$name,											
 				'itemDetails' => array(
 					'itemId'=>$itemId,
 					'quantity'=>$quantity,						 
