@@ -37,7 +37,7 @@
       <thead>
               <tr>
                 <th>#</th>
-                <th>Picture</th>
+               <!-- <th>Picture</th>-->
                 <th>Name</th>
                 <th>Type</th>
                 <th>Price</th>
@@ -49,8 +49,8 @@
               </thead>
               <tr ng-repeat="t in productList">
                 <td>{{$index+1}}</td>
-                <td ><img src="{{productimg}}" style="height:70px;width:70px;"></td>
-                <td ng-bind="t.name"></td>
+              <!--  <td ><img src="{{productimg}}" style="height:70px;width:70px;"></td>
+                --><td ng-bind="t.name"></td>
                 <td ng-bind="t.type"></td>
                 <td ng-bind="t.price"></td>
                 <td ng-bind="t.weight"></td>
