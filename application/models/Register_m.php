@@ -8,10 +8,10 @@ class Register_m extends CI_Model
       //$firstName = $postData->firstName;   
       $token=$this->session->userdata('authToken');  
       $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-      $url = 'http://18.188.222.175:8080/stores';   
+      $url = 'http://3.139.65.132:8080/stores';   
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/stores');
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -31,7 +31,7 @@ class Register_m extends CI_Model
          $token=$this->session->userdata('authToken');  
          $tr="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
          $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-         $url = 'http://18.188.222.175:8080/items';   
+         $url = 'http://3.139.65.132:8080/items';   
          /* Init cURL resource 
          $params = 'a0c2e01e-6940-455b-af68-b5e49dd0abb0';
          $url = $uurl . '?storeId=' . $params;
@@ -39,7 +39,7 @@ class Register_m extends CI_Model
       
          $ch = curl_init();
          //curl_setopt($ch, CURLOPT_URL, $url);
-         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/stores/'.$storeId.'/items');
+         curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
          //curl_setopt($ch, CURLOPT_POSTFIELDS,$storeId);
@@ -57,14 +57,14 @@ class Register_m extends CI_Model
         $postData = json_decode(file_get_contents('php://input'));
         $username=$postData->username; 
         $password=$postData->password;   
-        $url = 'http://18.188.222.175:8080/login';
+        $url = 'http://3.139.65.132:8080/login';
          $data = array(
             'username'=>$username, 
             'password'=>$password
          );    
          $d=json_encode($data);
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/login');
+         curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/login');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
          curl_setopt($ch, CURLOPT_POST, true);
          curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -108,7 +108,7 @@ class Register_m extends CI_Model
         $streetAddress1=$postData->streetAddress1; 
         $zip=$postData->zip; 
       
-        $url = 'http://18.188.222.175:8080/user';
+        $url = 'http://3.139.65.132:8080/user';
         $data = array(
          "address" => array (
                  'addressName'=>$addressName,
@@ -128,7 +128,7 @@ class Register_m extends CI_Model
          );  
         $d=json_encode($data);
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/user');
+        curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/user');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -149,10 +149,10 @@ class Register_m extends CI_Model
              //$firstName = $postData->firstName;   
              $token=$this->session->userdata('authToken');  
              $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-        $url = 'http://18.188.222.175:8080/stores';   
+        $url = 'http://3.139.65.132:8080/stores';   
         /* Init cURL resource */
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/stores');
+        curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
         //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -171,10 +171,10 @@ class Register_m extends CI_Model
          $token=$this->session->userdata('authToken');  
          $tr="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
          $t="1fa279e8-e2ee-4c83-83ef-a7f448bd788b";
-         $url = 'http://18.188.222.175:8080/items';   
+         $url = 'http://3.139.65.132:8080/items';   
          /* Init cURL resource */
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/stores/'.$storeId.'/items');
+         curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
          //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
