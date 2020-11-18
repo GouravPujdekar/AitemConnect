@@ -102,7 +102,7 @@ class CheckOut extends CI_Controller {
 
 				$dd=json_encode($d);
 				$ch = curl_init();
-				curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/orders');
+				curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/orders');
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 				curl_setopt($ch, CURLOPT_POSTFIELDS,$dd);
