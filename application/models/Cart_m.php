@@ -7,10 +7,10 @@ class Cart_m extends CI_Model
     //$firstName = $postData->firstName;   
     $token=$this->session->userdata('authToken');  
     $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-    $url = 'http://18.188.222.175:8080/carts';   
+    $url = 'http://3.139.65.132:8080/carts';   
     /* Init cURL resource */
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/carts');
+    curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/carts');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // curl_setopt($ch, CURLOPT_GET, true);
     //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -28,14 +28,14 @@ class Cart_m extends CI_Model
       $quantity = $postData->quantity;   
       $token=$this->session->userdata('authToken');  
       $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-      $url = 'http://18.188.222.175:8080/carts';   
+      $url = 'http://3.139.65.132:8080/carts';   
       $data = array(
          'itemId'=>$itemId, 
          'quantity'=>$quantity
       );    
       $d=json_encode($data);
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/carts');
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/carts');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -53,14 +53,14 @@ class Cart_m extends CI_Model
          $quantity = $postData->quantity;   
          $token=$this->session->userdata('authToken');  
          $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-         $url = 'http://18.188.222.175:8080/carts';   
+         $url = 'http://3.139.65.132:8080/carts';   
          $data = array(
             'itemId'=>$itemId, 
             'quantity'=>$quantity
          );    
          $d=json_encode($data);
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/carts');
+         curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/carts');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
          curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
          curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
