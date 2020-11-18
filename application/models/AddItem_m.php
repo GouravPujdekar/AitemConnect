@@ -59,10 +59,10 @@ class AddItem_m extends CI_Model
           
           $fileData = $this->upload->data();
           $uploadData['file_name'] = $fileData['file_name'];
-          $adImage = "http://3.131.82.166/AitemConnect/images/item_images/".time() . "_" . $_FILES['file']['name'];
+          $adImage = "http://3.139.65.132/AitemConnect/images/item_images/".time() . "_" . $_FILES['file']['name'];
        }
     }else{
-        $adImage = "http://3.131.82.166/AitemConnect/images/photo1.png";
+        $adImage = "http://3.139.65.132/AitemConnect/images/photo1.png";
     }       
       if($adImage != ""){
           $pictureId = $adImage; 
@@ -84,7 +84,7 @@ class AddItem_m extends CI_Model
       $weight=$postData->weight;      */
       $token=$this->session->userdata('authToken');  
       $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-      $url = 'http://18.188.222.175:8080/items';   
+      $url = 'http://3.139.65.132:8080/items';   
       $data = array(      
        'storeId'=>$storeId,
        'pictureId'=>$pictureId,    
@@ -104,7 +104,7 @@ class AddItem_m extends CI_Model
       $d=json_encode($data);
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'http://18.188.222.175:8080/items');
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/items');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
