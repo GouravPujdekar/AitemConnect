@@ -1,4 +1,4 @@
-app.controller('addstoreCtrl', function($http, $scope, toastr){
+app.controller('addstoreCtrl', function($http, $scope, toastr,$window){
  
     // ************** init ************************
       $scope.init = function() {
