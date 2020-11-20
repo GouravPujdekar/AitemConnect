@@ -1,4 +1,4 @@
-app.controller('orderCtrl', function($http, $scope, toastr){
+app.controller('orderCtrl', function($http, $scope, toastr,$window){
     $scope.init = function() {       
             $scope.getAllOrderDetails();      
             localStorage.clear();  
