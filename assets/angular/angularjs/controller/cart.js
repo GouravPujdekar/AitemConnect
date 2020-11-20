@@ -1,4 +1,4 @@
-app.controller('cartCtrl', function($http, $scope, toastr){
+app.controller('cartCtrl', function($http, $scope, toastr,$window){
     $scope.init = function() {       
             $scope.getAllCartDetails();      
             //localStorage.clear();  
