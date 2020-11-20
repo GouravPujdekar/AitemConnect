@@ -1,4 +1,4 @@
-app.controller('allproductCtrl', function($http, $scope, toastr,$location){
+app.controller('allproductCtrl', function($http, $scope, toastr,$location,$window){
     $scope.init = function() {       
             $scope.getAllStoreProductDetails();      
             //localStorage.clear();  
