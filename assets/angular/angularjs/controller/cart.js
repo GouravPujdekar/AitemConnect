@@ -7,7 +7,7 @@ app.controller('cartCtrl', function($http, $scope, toastr,$window){
         
     $scope.getAllCartDetails = function() {
         $scope.loader=true;  
-          var url = "http://" + $window.location.host + "index.php/Cart/getAllCart";
+          var url = "http://" + $window.location.host + "/index.php/Cart/getAllCart";
             $http.get(window.url).
             then((response) => {
                 $scope.cartListt = response.data;
