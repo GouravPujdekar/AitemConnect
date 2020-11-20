@@ -6,7 +6,8 @@ app.controller('avalStoresCtrl', function($http, $scope, toastr){
         }
     $scope.getAllAvalStoresDetails = function() {
         $scope.loader=true;  
-            $http.get(window.site_url + 'Home/getAllAvalStores').
+        var url = "http://" + $window.location.host + "index.php/Home/getAllAvalStores";
+            $http.get(window.url).
             then((response) => {
                 $scope.loader=false;  
                 $scope.shopListt = response.data;
@@ -28,9 +29,10 @@ app.controller('avalStoresCtrl', function($http, $scope, toastr){
         $scope.getAllItem=function(i){
             $scope.storeId=i.id;
             console.log($scope.storeId);
+              var url = "http://" + $window.location.host + "index.php/Home/getAllStoresProducts";
             $http({
               method:'get',
-              url:window.site_url + 'Home/getAllStoresProducts',
+              url:window.url',
               dataType:"json",
               params:{"storeId": $scope.storeId},
                }).then(function(response){
