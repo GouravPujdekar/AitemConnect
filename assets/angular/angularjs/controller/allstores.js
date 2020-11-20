@@ -1,4 +1,4 @@
-app.controller('avalStoresCtrl', function($http, $scope, toastr){
+app.controller('avalStoresCtrl', function($http, $scope, toastr,$window){
     $scope.init = function() {       
             $scope.getAllAvalStoresDetails();   
             //localStorage.clear();  
