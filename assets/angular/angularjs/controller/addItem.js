@@ -1,4 +1,4 @@
-app.controller('addItemCtrl', function($http, $scope, toastr){
+app.controller('addItemCtrl', function($http, $scope, toastr,$window){
  
     // ************** init ************************
       $scope.init = function() {
@@ -17,10 +17,10 @@ app.controller('addItemCtrl', function($http, $scope, toastr){
               $scope.loader=true;  
               console.log($scope.files);
               console.log($scope.filess);
-
+             var url = "http://" + $window.location.host + "/index.php/AddItem/addItemIntoStore";
               $http({
                 method: 'POST',
-                url: site_url + 'AddItem/addItemIntoStore',
+                url: url',
                 processData: false,
                 transformRequest: function(data) {
                     var formData = new FormData();
