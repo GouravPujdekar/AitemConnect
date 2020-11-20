@@ -1,5 +1,5 @@
 
-app.controller('loginCtrl', function($http, $scope, toastr,$location){
+app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
    
   // ************** init *************************
   $scope.init = function() {
