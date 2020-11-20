@@ -12,7 +12,8 @@ app.controller('allproductCtrl', function($http, $scope, toastr,$location){
         
     $scope.getAllStoreProductDetails = function() {
         $scope.loader=true;
-            $http.get(window.site_url + 'Home/getAllStoresProducts').
+        var url = "http://" + $window.location.host + "/index.php/Home/getAllStoresProducts";
+            $http.get(window.url).
             then((response) => {
                 $scope.loader=false;  
                 $scope.productListt = response.data;
@@ -33,9 +34,11 @@ app.controller('allproductCtrl', function($http, $scope, toastr,$location){
         $scope.addItemIntoCart = function(t) {
             $scope.itemId=t.id;
             $scope.quantity=1;
+          
             if ($scope.itemId && $scope.quantity){  
-                $scope.loader=true;         
-                 $http.post(site_url + 'Cart/addItem',{
+                $scope.loader=true;        
+                   var url = "http://" + $window.location.host + "/index.php/Cart/addItem";
+                 $http.post(url,{
      
                      'itemId' : $scope.itemId,               
                      'quantity' : $scope.quantity                
