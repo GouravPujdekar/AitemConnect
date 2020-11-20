@@ -1,4 +1,4 @@
-app.controller('shopCtrl', function($http, $scope, toastr){
+app.controller('shopCtrl', function($http, $scope, toastr,$window){
 $scope.init = function() {       
         $scope.getAllStoresDetails();   
         $scope.loader=false;  
@@ -6,7 +6,8 @@ $scope.init = function() {
     }
 $scope.getAllStoresDetails = function() {
     $scope.loader=true;  
-        $http.get(window.site_url + 'Home/getAllStores').
+        var url = "http://" + $window.location.host + "/index.php/Home/getAllStores";
+        $http.get(window.url).
         then((response) => {
             $scope.loader=false;  
             $scope.shopListt = response.data;
