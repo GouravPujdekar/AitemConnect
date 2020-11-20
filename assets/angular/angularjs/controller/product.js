@@ -18,7 +18,7 @@ app.controller('productCtrl', function($http, $scope, toastr,$window){
         $scope.storeId=$scope.detailsList;
         console.log($scope.storeId);
         $scope.loader=true; 
-         var url = "http://" + $window.location.host + "index.php/Home/getAllProducts";
+         var url = "http://" + $window.location.host + "/index.php/Home/getAllProducts";
         $http({
             method:'get',
             url:window.url,
