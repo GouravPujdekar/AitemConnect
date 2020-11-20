@@ -43,7 +43,7 @@ class AddItem_m extends CI_Model
       if(isset($postedData['weight'])){
          $weight = $postedData['weight']; 
       }           
-      $root="http://".$_SERVER['HTTP_HOST']."/";     
+      $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $url ="$root"; 
       if (!empty($_FILES['file']['name'])) {
 
@@ -88,7 +88,7 @@ class AddItem_m extends CI_Model
       $weight=$postData->weight;      */
       $token=$this->session->userdata('authToken');  
       $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-     $root="http://".$_SERVER['HTTP_HOST']."/";     
+     $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $url ="$root"; 
       $data = array(      
        'storeId'=>$storeId,
@@ -109,7 +109,7 @@ class AddItem_m extends CI_Model
       $d=json_encode($data);
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url.':8080/items');
+      curl_setopt($ch, CURLOPT_URL, $url.'/items');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
