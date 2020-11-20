@@ -42,7 +42,9 @@ class AddItem_m extends CI_Model
       }  
       if(isset($postedData['weight'])){
          $weight = $postedData['weight']; 
-      }            
+      }           
+      $root="http://".$_SERVER['HTTP_HOST']."/";     
+      $url ="$root"; 
       if (!empty($_FILES['file']['name'])) {
 
        $_FILES['userfile']['name'] = time() . "_" . $_FILES['file']['name'];
@@ -55,14 +57,16 @@ class AddItem_m extends CI_Model
        $config['allowed_types'] = '*';
        $this->load->library('upload', $config);
        $this->upload->initialize($config);
+       
        if ($this->upload->do_upload('userfile')) {
           
           $fileData = $this->upload->data();
           $uploadData['file_name'] = $fileData['file_name'];
-          $adImage = "http://3.139.65.132/AitemConnect/images/item_images/".time() . "_" . $_FILES['file']['name'];
+        
+          $adImage = $url."/images/item_images/".time() . "_" . $_FILES['file']['name'];
        }
     }else{
-        $adImage = "http://3.139.65.132/AitemConnect/images/photo1.png";
+        $adImage = $url."/images/photo1.png";
     }       
       if($adImage != ""){
           $pictureId = $adImage; 
@@ -84,7 +88,8 @@ class AddItem_m extends CI_Model
       $weight=$postData->weight;      */
       $token=$this->session->userdata('authToken');  
       $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-      $url = 'http://3.139.65.132:8080/items';   
+     $root="http://".$_SERVER['HTTP_HOST']."/";     
+      $url ="$root"; 
       $data = array(      
        'storeId'=>$storeId,
        'pictureId'=>$pictureId,    
@@ -104,7 +109,7 @@ class AddItem_m extends CI_Model
       $d=json_encode($data);
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/items');
+      curl_setopt($ch, CURLOPT_URL, $url.':8080/items');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
