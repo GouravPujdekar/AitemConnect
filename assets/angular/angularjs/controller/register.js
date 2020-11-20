@@ -1,4 +1,4 @@
-app.controller('registerCtrl', function($http, $scope, toastr,$location){
+app.controller('registerCtrl', function($http, $scope, toastr,$location,$window){
  
   // ************** init ************************
     $scope.init = function() {
@@ -10,7 +10,8 @@ app.controller('registerCtrl', function($http, $scope, toastr,$location){
         if ($scope.fname && $scope.lname && $scope.email && $scope.mobile && $scope.username && $scope.password &&  $scope.streetAddress && $scope.streetAddress1 &&
            $scope.addressName &&  $scope.state && $scope.city &&  $scope.zip  && $scope.selectProfile)  { 
             $scope.loader=true;  
-            $http.post(site_url + 'Home/registerUser',{
+         var url = "http://" + $window.location.host + "/index.php/Home/registerUser";
+            $http.post(url,{
 
                 'firstName' : $scope.fname,
                 'lastName' : $scope.lname,
