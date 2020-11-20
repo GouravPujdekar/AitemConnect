@@ -13,7 +13,8 @@ app.controller('addstoreCtrl', function($http, $scope, toastr){
       //  console.log($scope.id);
           if ($scope.addressName && $scope.streetAddress && $scope.zip && $scope.email && $scope.city && $scope.state && $scope.mobile)  { 
               $scope.loader=true;  
-              $http.post(site_url + 'AddStore/addStore',{                   
+            var url = "http://" + $window.location.host + "/index.php/AddStore/addStore";
+              $http.post(url,{                   
                  
                   'addressName' : $scope.addressName,
                   'city' : $scope.city,    
