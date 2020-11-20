@@ -9,7 +9,7 @@ app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
 
         if ($scope.username && $scope.password)  { 
           $scope.loader=true;           // toastr.success('Login successfully.');
-            var url = "http://" + $window.location.host + "index.php/Home/loginUser";
+            var url = "http://" + $window.location.host + "/index.php/Home/loginUser";
             $http.post(url,{
                
                 'username':$scope.username,
