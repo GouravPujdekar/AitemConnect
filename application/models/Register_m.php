@@ -8,11 +8,11 @@ class Register_m extends CI_Model
       //$firstName = $postData->firstName;   
       $token=$this->session->userdata('authToken');  
       $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-     $root="http://".$_SERVER['HTTP_HOST']."/";     
+     $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $url ="$root";   
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url.':8080/stores');
+      curl_setopt($ch, CURLOPT_URL, $url.'/stores');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -32,7 +32,7 @@ class Register_m extends CI_Model
          $token=$this->session->userdata('authToken');  
          $tr="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
          $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-        $root="http://".$_SERVER['HTTP_HOST']."/";     
+        $root="http://".$_SERVER['HTTP_HOST'].":8080";     
         $url ="$root";  
          /* Init cURL resource 
          $params = 'a0c2e01e-6940-455b-af68-b5e49dd0abb0';
@@ -41,7 +41,7 @@ class Register_m extends CI_Model
       
          $ch = curl_init();
          //curl_setopt($ch, CURLOPT_URL, $url);
-         curl_setopt($ch, CURLOPT_URL, $url.':8080/stores/'.$storeId.'/items');
+         curl_setopt($ch, CURLOPT_URL, $url.'/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
          //curl_setopt($ch, CURLOPT_POSTFIELDS,$storeId);
@@ -59,7 +59,7 @@ class Register_m extends CI_Model
         $postData = json_decode(file_get_contents('php://input'));
         $username=$postData->username; 
         $password=$postData->password;   
-      $root="http://".$_SERVER['HTTP_HOST']."/";     
+      $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $url ="$root"; 
          $data = array(
             'username'=>$username, 
@@ -67,7 +67,7 @@ class Register_m extends CI_Model
          );    
          $d=json_encode($data);
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, $url.':8080/login');
+         curl_setopt($ch, CURLOPT_URL, $url.'/login');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
          curl_setopt($ch, CURLOPT_POST, true);
          curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -111,7 +111,7 @@ class Register_m extends CI_Model
         $streetAddress1=$postData->streetAddress1; 
         $zip=$postData->zip; 
       
-       $root="http://".$_SERVER['HTTP_HOST']."/";     
+       $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $url ="$root"; 
         $data = array(
          "address" => array (
@@ -132,7 +132,7 @@ class Register_m extends CI_Model
          );  
         $d=json_encode($data);
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url.':8080/user');
+        curl_setopt($ch, CURLOPT_URL, $url.'/user');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -153,11 +153,11 @@ class Register_m extends CI_Model
              //$firstName = $postData->firstName;   
              $token=$this->session->userdata('authToken');  
              $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-       $root="http://".$_SERVER['HTTP_HOST']."/";     
+       $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $url ="$root";  
         /* Init cURL resource */
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url.':8080/stores');
+        curl_setopt($ch, CURLOPT_URL, $url.'/stores');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
         //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -176,11 +176,11 @@ class Register_m extends CI_Model
          $token=$this->session->userdata('authToken');  
          $tr="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
          $t="1fa279e8-e2ee-4c83-83ef-a7f448bd788b";
-         $root="http://".$_SERVER['HTTP_HOST']."/";     
+         $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $url ="$root";    
          /* Init cURL resource */
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, $url.':8080/stores/'.$storeId.'/items');
+         curl_setopt($ch, CURLOPT_URL, $url.'/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
          //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
