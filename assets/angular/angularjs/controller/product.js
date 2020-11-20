@@ -1,4 +1,4 @@
-app.controller('productCtrl', function($http, $scope, toastr){
+app.controller('productCtrl', function($http, $scope, toastr,$window){
     $scope.init = function() {       
             $scope.getAllProductDetails();      
             //localStorage.clear();  
@@ -18,9 +18,10 @@ app.controller('productCtrl', function($http, $scope, toastr){
         $scope.storeId=$scope.detailsList;
         console.log($scope.storeId);
         $scope.loader=true; 
+         var url = "http://" + $window.location.host + "index.php/Home/getAllProducts";
         $http({
             method:'get',
-            url:window.site_url + 'Home/getAllProducts',
+            url:window.url,
             dataType:"json",
             params:{"storeId": $scope.storeId},
              }).then(function(response){
