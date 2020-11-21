@@ -18,7 +18,8 @@ class AddStore_m extends CI_Model
     $token=$this->session->userdata('authToken');  
     $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
    $root="http://".$_SERVER['HTTP_HOST'].":8080";     
-      $url ="$root";   
+      $urll ="$root";   
+  $url="http://3.139.65.132:8080/";
     $data = array(
      "address" => array (
              'addressName'=>$addressName,
