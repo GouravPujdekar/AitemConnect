@@ -8,7 +8,8 @@ class Cart_m extends CI_Model
     $token=$this->session->userdata('authToken');  
     $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
     $root="http://".$_SERVER['HTTP_HOST'].":8080";     
-      $url ="$root"; 
+      $urll ="$root"; 
+  $url="http://3.139.65.132:8080/";
     /* Init cURL resource */
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url.'/carts');
@@ -29,8 +30,9 @@ class Cart_m extends CI_Model
       $quantity = $postData->quantity;   
       $token=$this->session->userdata('authToken');  
       $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
-      $root="http://".$_SERVER['HTTP_HOST'].":8080";     
-      $url ="$root";   
+      $root="http://".$_SERVER['HTTP_HOST'].":8080";    
+     $url="http://3.139.65.132:8080/";
+      $urll ="$root";   
       $data = array(
          'itemId'=>$itemId, 
          'quantity'=>$quantity
@@ -56,7 +58,8 @@ class Cart_m extends CI_Model
          $token=$this->session->userdata('authToken');  
          $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
          $root="http://".$_SERVER['HTTP_HOST'].":8080";     
-      $url ="$root";   
+      $urll ="$root";   
+       $url="http://3.139.65.132:8080/";
          $data = array(
             'itemId'=>$itemId, 
             'quantity'=>$quantity
