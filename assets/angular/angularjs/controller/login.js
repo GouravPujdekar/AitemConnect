@@ -18,7 +18,7 @@ app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
                 then((response) => {  
                     console.log(response);
                     console.log(response.data);
-              if (response.data && response.data["profileType"]=="RETAILER" || response.data["profileType"]=="SHOPPER") {
+              if (response.data && response.data["profileType"]=="RETAILER" || response.data["profileType"]=="CUSTOMER") {
                     $scope.loader=false;  
                     toastr.success('Login successfully.');
                     $scope.username="";
