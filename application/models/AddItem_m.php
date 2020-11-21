@@ -43,8 +43,10 @@ class AddItem_m extends CI_Model
       if(isset($postedData['weight'])){
          $weight = $postedData['weight']; 
       }           
-      $root="http://".$_SERVER['HTTP_HOST'].":8080";     
-      $url ="$root"; 
+    //  $root="http://".$_SERVER['HTTP_HOST'].":8080"; 
+    $root="http://".$_SERVER['HTTP_HOST'];  
+      $urll ="$root"; 
+    $url="http://3.139.65.132:8080"
       if (!empty($_FILES['file']['name'])) {
 
        $_FILES['userfile']['name'] = time() . "_" . $_FILES['file']['name'];
@@ -63,10 +65,10 @@ class AddItem_m extends CI_Model
           $fileData = $this->upload->data();
           $uploadData['file_name'] = $fileData['file_name'];
         
-          $adImage = $url."/images/item_images/".time() . "_" . $_FILES['file']['name'];
+          $adImage = $urll."/images/item_images/".time() . "_" . $_FILES['file']['name'];
        }
     }else{
-        $adImage = $url."/images/photo1.png";
+        $adImage = $urll."/images/photo1.png";
     }       
       if($adImage != ""){
           $pictureId = $adImage; 
@@ -88,8 +90,7 @@ class AddItem_m extends CI_Model
       $weight=$postData->weight;      */
       $token=$this->session->userdata('authToken');  
       $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-     $root="http://".$_SERVER['HTTP_HOST'].":8080";     
-      $url ="$root"; 
+    
       $data = array(      
        'storeId'=>$storeId,
        'pictureId'=>$pictureId,    
