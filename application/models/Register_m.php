@@ -10,7 +10,7 @@ class Register_m extends CI_Model
       $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
      $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $urll ="$root";
-    $url="http://3.139.65.132:8080/";
+    $url="http://3.139.65.132:8080";
       /* Init cURL resource */
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $url.'/stores');
@@ -35,7 +35,7 @@ class Register_m extends CI_Model
          $t="U9y+eHeUyL7S9hmE4OuwbDTKpkHVvvG2AK/Mt+PuPkhikK6RkwMZg0i+QlCRwJc/pYwk4nD/Xa5skCE+hTqEZg==";
         $root="http://".$_SERVER['HTTP_HOST'].":8080";     
         $urll ="$root";  
-       $url="http://3.139.65.132:8080/";
+       $url="http://3.139.65.132:8080";
          /* Init cURL resource 
          $params = 'a0c2e01e-6940-455b-af68-b5e49dd0abb0';
          $url = $uurl . '?storeId=' . $params;
@@ -116,7 +116,7 @@ class Register_m extends CI_Model
       
        $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $urll ="$root"; 
-     $url="http://3.139.65.132:8080/";
+     $url="http://3.139.65.132:8080";
         $data = array(
          "address" => array (
                  'addressName'=>$addressName,
@@ -159,7 +159,7 @@ class Register_m extends CI_Model
              $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
        $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $urll ="$root";
-       $url="http://3.139.65.132:8080/";
+       $url="http://3.139.65.132:8080";
         /* Init cURL resource */
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url.'/stores');
@@ -183,7 +183,7 @@ class Register_m extends CI_Model
          $t="1fa279e8-e2ee-4c83-83ef-a7f448bd788b";
          $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $urll ="$root";
-       $url="http://3.139.65.132:8080/";
+       $url="http://3.139.65.132:8080";
          /* Init cURL resource */
          $ch = curl_init();
          curl_setopt($ch, CURLOPT_URL, $url.'/stores/'.$storeId.'/items');
