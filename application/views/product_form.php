@@ -143,7 +143,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group">
                             <input type="text" style="display:none" name="quantity" id="quantity" ng-model="quantity" class="form-control" readonly autocomplete="off"  required>
                         </div>
-
+			<div class="form-group">
+                            <input type="text"  style="display:none" name="orderId" id="orderId" ng-model="orderId" class="form-				control" readonly autocomplete="off"  required>
+                        </div>
                         <div class="form-group text-right">
                         
                           <button type="submit" id="payBtn" class="btn btn-success">Submit Payment</button>
