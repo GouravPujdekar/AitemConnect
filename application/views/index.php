@@ -176,10 +176,38 @@
         </div>  </div>
 </div>
 </div>
-</div>
-        <div class="col-sm-12 text-center">            
-             <a class="btn btn-outline-dark" style="width:300px;" href="<?php echo site_url('Home/AllStores');?>"><b> Explore Stores near you -> </b></a>
+</div><div class="col-sm-12 text-center">            
+             <a class="btn btn-primary" style="width:300px;" href="<?php echo site_url('Home/AllStores');?>"><b> Explore Stores near you -> </b></a>
         </div>
+</section>
+
+  <section class="call-in-action padding-bottom padding-top theme-overlay style-two " >
+    <div class="container">
+    <h2>Our Gallary</h2><br>
+        <div class="row">
+            <div class="col-sm-4">
+              <img src="<?php echo base_url('images/way2.jpg');?>" alt="" style="height:300px;width:300px;">
+            </div>
+            <div class="col-sm-4">
+              <img src="<?php echo base_url('images/way9.jpg');?>" alt="" style="height:300px;width:300px;">
+            </div>
+            <div class="col-sm-4">
+              <img src="<?php echo base_url('images/way4.png');?>" alt="" style="height:300px;width:300px;">
+            </div>
+            </div><hr>
+            <div class="row">
+            <div class="col-sm-4">
+              <img src="<?php echo base_url('images/way5.png');?>" alt="" style="height:300px;width:300px;">
+            </div>
+            <div class="col-sm-4">
+              <img src="<?php echo base_url('images/way6.jpg');?>" alt="" style="height:300px;width:300px;">
+            </div>
+            <div class="col-sm-4">
+              <img src="<?php echo base_url('images/way7.jpg');?>" alt="" style="height:300px;width:300px;">
+            </div>
+            
+        </div>
+    </div>
 </section>
     <!-- ==========footer-section========== -->   
   </body>
