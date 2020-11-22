@@ -73,7 +73,7 @@
             </div>
         </div>
     </header>
-    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo" ng-app="myApp" ng-controller="loginCtrl" ng-init="init()">
+    <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo" ng-app="myApp" ng-controller="loginCtrl" ng-init="init()" style="background-image:url('<?php echo base_url('images/way11.jpg');?>');background-size:1000px;">
         <div class="wrapper wrapper--w960">
             <div class="card card-2">
                 <div class="card-heading"></div>
