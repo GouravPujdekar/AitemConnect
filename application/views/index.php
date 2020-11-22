@@ -34,16 +34,16 @@
                                      </div>   
                             </div><br>
                             <p>POPULAR CITIES IN UNITED STATES ALONG WITH ALL THOSE CITIES CITED</p>
-                            <p class="text-justify">Autin,Houston,Chicago,Aurara,Naperville,Joilet & more</p>
+                            <p class="text-justify">Austin,Houston,Chicago,Aurara,Naperville,Joilet & more</p>
                 </div>
                 </div>
                 <div class=" col-lg-6 px-0 " >
-                    <img src="<?php echo base_url('assets/images/way.jpg');?>" style="height:400px;width:100%;">
+                    <img src="<?php echo base_url('images/way.jpg');?>" style="height:400px;width:100%;">
                 </div>
             </div>           
        </div>
     </section>    
-   <section class="call-in-action padding-bottom padding-top theme-overlay style-two " >
+   <section class="call-in-action padding-bottom padding-top  style-two " style="background-image:url('<?php echo base_url('images/way3.jpg');?>');background-size:1000px;">
     <div class="container">
     <h2>What do you want?</h2><br>
     <div class="container">
@@ -176,7 +176,8 @@
         </div>  </div>
 </div>
 </div>
-</div><div class="col-sm-12 text-center">            
+</div>
+        <div class="col-sm-12 text-center">            
              <a class="btn btn-primary" style="width:300px;" href="<?php echo site_url('Home/AllStores');?>"><b> Explore Stores near you -> </b></a>
         </div>
 </section>
