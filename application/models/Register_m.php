@@ -63,7 +63,7 @@ class Register_m extends CI_Model
         $password=$postData->password;   
       $root="http://".$_SERVER['HTTP_HOST'].":8080";     
       $urll ="$root";
-     $url="http://3.139.65.132:8080/";
+     $url="http://3.139.65.132:8080";
          $data = array(
             'username'=>$username, 
             'password'=>$password
