@@ -26,6 +26,7 @@ app.controller('stripeCtrl', function($http, $scope, toastr,$window){
                     $scope.amount = response.data["items"][0]["price"];
                     $scope.id = response.data["items"][0]["id"];
                     $scope.quantity = response.data["items"][0]["quantity"];
+                  $scope.orderId = response.data["orderId"];
                     console.log($scope.amount);
                     console.log($scope.id);
                     console.log($scope.quantity);
