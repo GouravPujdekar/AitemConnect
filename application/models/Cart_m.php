@@ -12,7 +12,7 @@ class Cart_m extends CI_Model
   $url="http://3.139.65.132:8080";
     /* Init cURL resource */
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url.'/carts');
+    curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/carts');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // curl_setopt($ch, CURLOPT_GET, true);
     //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -39,7 +39,7 @@ class Cart_m extends CI_Model
       );    
       $d=json_encode($data);
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url.'/carts');
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/carts');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -66,7 +66,7 @@ class Cart_m extends CI_Model
          );    
          $d=json_encode($data);
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, $url.'/carts');
+         curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/carts');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
          curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
          curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
