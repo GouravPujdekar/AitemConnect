@@ -12,7 +12,7 @@ class Order_m extends CI_Model
       $urll ="$root";  
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url.'/orders');
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/orders');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
