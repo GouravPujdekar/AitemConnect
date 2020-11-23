@@ -78,7 +78,7 @@
             <div class="card card-2">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Welcome To AitemConnect</h2>
+                    <h2 class="title">Welcome To AitemConnec</h2>
                     <form >
                         <div class="input-group">
                             <input class="input--style-2" type="text" ng-model="username" id="username" placeholder="Username" name="username">
