@@ -37,7 +37,7 @@ class AddStore_m extends CI_Model
     $d=json_encode($data);
     /* Init cURL resource */
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url.'/stores');
+    curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // curl_setopt($ch, CURLOPT_GET, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
