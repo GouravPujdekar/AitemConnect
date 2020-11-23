@@ -13,7 +13,7 @@ class Register_m extends CI_Model
     $url="http://3.139.65.132:8080";
       /* Init cURL resource */
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, $url.'/stores');
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
       //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -43,7 +43,7 @@ class Register_m extends CI_Model
       
          $ch = curl_init();
          //curl_setopt($ch, CURLOPT_URL, $url);
-         curl_setopt($ch, CURLOPT_URL, $url.'/stores/'.$storeId.'/items');
+         curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
          //curl_setopt($ch, CURLOPT_POSTFIELDS,$storeId);
@@ -136,7 +136,7 @@ class Register_m extends CI_Model
          );  
         $d=json_encode($data);
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url.'/user');
+        curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/user');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -162,7 +162,7 @@ class Register_m extends CI_Model
        $url="http://3.139.65.132:8080";
         /* Init cURL resource */
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url.'/stores');
+        curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
         //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
@@ -186,7 +186,7 @@ class Register_m extends CI_Model
        $url="http://3.139.65.132:8080";
          /* Init cURL resource */
          $ch = curl_init();
-         curl_setopt($ch, CURLOPT_URL, $url.'/stores/'.$storeId.'/items');
+         curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores/'.$storeId.'/items');
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       // curl_setopt($ch, CURLOPT_GET, true);
          //curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
