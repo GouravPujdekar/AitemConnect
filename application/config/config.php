@@ -23,11 +23,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-//$config['base_url'] = 'http://3.139.65.132/';
 $root="http://".$_SERVER['HTTP_HOST'];
 $root.=str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
-//$config['base_url'] = '';
 $config['base_url'] ="$root";
+
+
+$config['folder_name'] = 'pictures/';
+$config['s3_access_key'] = 'WRITE_YOUR_S3_ACCESS_KEY';
+$config['s3_secret_key'] = 'WRITE_YOUR_S3_SECRET_NAME';
+$config['s3_bucket_name'] = 'a-item-connect-dev';
+$config['s3_bucket_url'] = 'https://a-item-connect-dev.s3.amazonaws.com';
 /*
 |--------------------------------------------------------------------------
 | Index File
