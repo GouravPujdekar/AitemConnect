@@ -9,27 +9,43 @@ class Home extends CI_Controller {
         $this->load->model('Register_m');
       }
       function index()
-	    {     
-        $this->load->view('comman/header');    
-        $this->load->view('index');           
+	    {
+        $data['title'] = 'Home';     
+        $this->load->view('comman/header',$data);    
+        $this->load->view('index');   
+	$this->load->view('comman/footer');        
       }        
+       function OrderDetails() {   
+	$username = $this->session->userdata('username');
+        if (!empty($username)) {
+     	  $data['title'] = 'Order Details';     
+        $this->load->view('comman/header',$data);          
+        $this->load->view('orderdetails');   
+      }
+	else{	
+	 redirect(base_url(), 'refresh');
+	}
+}
       function AllStores()
       { 
 	$username = $this->session->userdata('username');
         if (!empty($username)) {
-        $this->load->view('comman/header');    
-        $this->load->view('allstores');   
+        $data['title'] = 'All Stores';     
+        $this->load->view('comman/header',$data);     
+        $this->load->view('allstores'); 
+	$this->load->view('comman/footer');      
 	}else{
-		 $this->load->view('login'); 
-	 //redirect(base_url(), 'refresh');
+		 $this->load->view('login');	
 	}
       }      
       function AddStore()
       { 
 	$username = $this->session->userdata('username');
         if (!empty($username)) {
-        $this->load->view('comman/header');    
-        $this->load->view('addstore');  
+         $data['title'] = 'Add Store';     
+        $this->load->view('comman/header',$data);      
+        $this->load->view('addstore'); 
+	$this->load->view('comman/footer');     
 	}else{		   
 	redirect(base_url(), 'refresh');
 	}
@@ -38,8 +54,10 @@ class Home extends CI_Controller {
       { 
 	$username = $this->session->userdata('username');
         if (!empty($username)) {
-        $this->load->view('comman/header');    
+          $data['title'] = 'Add Item';     
+        $this->load->view('comman/header',$data);      
         $this->load->view('additem'); 
+	$this->load->view('comman/footer');
 	}else{
 	 redirect(base_url(), 'refresh');
 	}
@@ -48,19 +66,22 @@ class Home extends CI_Controller {
 	{
 	$username = $this->session->userdata('username');
         if (!empty($username)) {
-        $this->load->view('comman/header');    
-        $this->load->view('shop');   
+          $data['title'] = 'Your Stores';     
+        $this->load->view('comman/header',$data);     
+        $this->load->view('shop');
+	$this->load->view('comman/footer');   
 	 }else{
-		$this->load->view('login'); 
-	 //redirect(base_url(), 'refresh');
+		$this->load->view('login'); 	
 	}
       } 
       function Cart()
 	{
 	$username = $this->session->userdata('username');
         if (!empty($username)) {
-        $this->load->view('comman/hed');    
+         $data['title'] = 'Cart';     
+        $this->load->view('comman/header',$data);      
         $this->load->view('cart');
+	$this->load->view('comman/footer');
 	 }else{
 	 redirect(base_url(), 'refresh');
 	}
@@ -68,8 +89,10 @@ class Home extends CI_Controller {
       function AllStoreProduct() {
 	 $username = $this->session->userdata('username');
         if (!empty($username)) {
-        $this->load->view('comman/header');    
+         $data['title'] = 'All Products';     
+        $this->load->view('comman/header',$data);      
         $this->load->view('allproduct');
+	$this->load->view('comman/footer');
 	 }else{
 	 redirect(base_url(), 'refresh');
 	}
@@ -80,8 +103,10 @@ class Home extends CI_Controller {
       function Product() {
 	$username = $this->session->userdata('username');
         if (!empty($username)) {
-        $this->load->view('comman/header');    
+         $data['title'] = 'Your Products';     
+        $this->load->view('comman/header',$data);     
         $this->load->view('product');
+	$this->load->view('comman/footer');
 	}else{
 	 redirect(base_url(), 'refresh');
 	}
@@ -92,8 +117,7 @@ class Home extends CI_Controller {
         $this->load->view('register');   
       }
       public function registerUser() {
-        $this->load->model('Register_m');
-        // $this->output->set_content_type('application/json')->set_output(json_encode($this->Register_m->registerUser()));
+        $this->load->model('Register_m');     
         $re=$this->Register_m->registerUser();
         echo $re;
       }
@@ -107,7 +131,7 @@ class Home extends CI_Controller {
       }
       public function loginUser() {
         $this->load->model('Register_m');           
-        $this->output->set_content_type('application/json')->set_output(json_encode($this->Register_m->loginUser()));
+        print_r($this->Register_m->loginUser());
       }
       public function getAllStores() {
         $this->load->model('Register_m');

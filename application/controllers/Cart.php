@@ -10,6 +10,10 @@ class Cart extends CI_Controller {
     function getAllCart(){            
       print_r($this->m->getAllCart());
    }
+  function getAddressByUserId(){            
+      print_r($this->m->getAddressByUserId());
+   }
+
     function addItem(){            
       print_r($this->m->addItem());
    }
