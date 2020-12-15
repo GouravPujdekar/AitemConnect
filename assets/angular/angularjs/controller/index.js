@@ -7,7 +7,7 @@ $scope.init = function() {
 $scope.getAllStoresDetails = function() {
     $scope.loader=true;  
         var url = "http://" + $window.location.host + "/index.php/Home/getAllStores";
-        $http.get(window.url).
+        $http.get(url).
         then((response) => {
             $scope.loader=false;  
             $scope.shopListt = response.data;

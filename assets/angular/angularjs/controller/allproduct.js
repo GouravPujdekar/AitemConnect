@@ -1,4 +1,4 @@
-app.controller('allproductCtrl', function($http, $scope, toastr,$location,$window){
+app.controller('allproductCtrl', function($http, $scope, toastr,$window){
     $scope.init = function() {       
             $scope.getAllStoreProductDetails();      
             //localStorage.clear();  
@@ -12,16 +12,25 @@ app.controller('allproductCtrl', function($http, $scope, toastr,$location,$windo
         
     $scope.getAllStoreProductDetails = function() {
         $scope.loader=true;
-        var url = "http://" + $window.location.host + "/index.php/Home/getAllStoresProducts";
-            $http.get(window.url).
+ 	var retrievedObject = window.localStorage.getItem('storeProduct');
+            var parsedObject = JSON.parse(retrievedObject);
+            console.log(parsedObject);
+            $scope.productList=parsedObject;
+            console.log($scope.productList);
+
+
+
+       /* var url = "http://" + $window.location.host + "/index.php/Home/getAllStoresProducts";
+            $http.get(url).
             then((response) => {
                 $scope.loader=false;  
                 $scope.productListt = response.data;
                 console.log($scope.productListt);
                 console.log(response);
-                if(response.data['status']=="400"){
+                if(response.data['status']=="404"){
                     $scope.loader=false;  
                     toastr.warning("Items are not available");
+console.log(response.data);
                 }
                 else{                 
                     $scope.loader=false;  
@@ -29,7 +38,7 @@ app.controller('allproductCtrl', function($http, $scope, toastr,$location,$windo
                     console.log($scope.productList);
                 }
                
-            });
+            });*/
         }
         $scope.addItemIntoCart = function(t) {
             $scope.itemId=t.id;
@@ -49,8 +58,8 @@ app.controller('allproductCtrl', function($http, $scope, toastr,$location,$windo
                         if(response.data) {
                             $scope.loader=false;  
                          toastr.success('Item added into cart successfully.');
-                         var url="Cart";
-                        window.location=url;
+                        // var url="Cart";
+                       // window.location=url;
                         }
                         },
                          (error) => {

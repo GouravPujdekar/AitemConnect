@@ -6,8 +6,8 @@ app.controller('avalStoresCtrl', function($http, $scope, toastr,$window){
         }
     $scope.getAllAvalStoresDetails = function() {
         $scope.loader=true;  
-        var url = "http://" + $window.location.host + "index.php/Home/getAllAvalStores";
-            $http.get(window.url).
+        var url = "http://" + $window.location.host + "/index.php/Home/getAllAvalStores";
+            $http.get(url).
             then((response) => {
                 $scope.loader=false;  
                 $scope.shopListt = response.data;
@@ -29,16 +29,16 @@ app.controller('avalStoresCtrl', function($http, $scope, toastr,$window){
         $scope.getAllItem=function(i){
             $scope.storeId=i.id;
             console.log($scope.storeId);
-              var url = "http://" + $window.location.host + "index.php/Home/getAllStoresProducts";
+              var urll = "http://" + $window.location.host + "/index.php/Home/getAllStoresProducts";
             $http({
               method:'get',
-              url:window.url',
+              url:urll,
               dataType:"json",
               params:{"storeId": $scope.storeId},
                }).then(function(response){
                   $scope.loader=false;  
                   $scope.productListt = response.data;
-                  //console.log($scope.shopList);
+               
                   if(response.data['status']=="400"){
                       $scope.loader=false;  
                       toastr.warning("Something went wrong");
@@ -46,7 +46,9 @@ app.controller('avalStoresCtrl', function($http, $scope, toastr,$window){
                       toastr.warning("Products are not available");
                   }else{           
                       $scope.loader=false;        
-                      $scope.productList = $scope.productListt;
+                      localStorage.setItem("storeProduct",JSON.stringify($scope.productListt));
+			var u="AllStoreProduct"; 
+			window.location=u;
                       console.log($scope.productList);
                   }
                },function(err){

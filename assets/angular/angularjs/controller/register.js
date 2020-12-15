@@ -1,3 +1,7 @@
+$("input[type=text]").change(function(){
+    var gotId = $(this).parent().attr('id');
+    $('#'+gotId).removeClass('has-error');
+});
 app.controller('registerCtrl', function($http, $scope, toastr,$location,$window){
  
   // ************** init ************************
@@ -7,8 +11,8 @@ app.controller('registerCtrl', function($http, $scope, toastr,$location,$window)
 
  $scope.register = function() {
 
-        if ($scope.fname && $scope.lname && $scope.email && $scope.mobile && $scope.username && $scope.password &&  $scope.streetAddress && $scope.streetAddress1 &&
-           $scope.addressName &&  $scope.state && $scope.city &&  $scope.zip  && $scope.selectProfile)  { 
+        if ($scope.selectProfile && $scope.fname && $scope.lname && $scope.email && $scope.mobile && $scope.username && $scope.password &&  $scope.streetAddress &&
+           $scope.addressName &&  $scope.state && $scope.city &&  $scope.zip )  { 
             $scope.loader=true;  
          var url = "http://" + $window.location.host + "/index.php/Home/registerUser";
             $http.post(url,{
@@ -108,6 +112,14 @@ app.controller('registerCtrl', function($http, $scope, toastr,$location,$window)
               })
           }
         else{ 
+
+ 	if (!$scope.selectProfile) {
+             $('#profileDiv').addClass('has-error');
+             toastr.error('Please select profile.');
+             $('#selectProfile').focus();
+             }
+             else{
+             $('#profileDiv').removeClass('has-error');
             if (!$scope.fname) {
               $('#nameDiv').addClass('has-error');
               toastr.error('Please enter First Name.');
@@ -163,6 +175,22 @@ app.controller('registerCtrl', function($http, $scope, toastr,$location,$window)
                                       }
                                       else{
                                          $('#streetAddressDiv').removeClass('has-error');
+					
+					if (!$scope.addressName) {
+                                      $('#addressNameDiv').addClass('has-error');
+                                      toastr.error('Please enter AddressName.');
+                                      $('#addressName').focus();
+                                      }
+                                      else{
+                                         $('#addressNameDiv').removeClass('has-error');
+
+					 if (!$scope.city) {
+                                          $('#cityDiv').addClass('has-error');
+                                          toastr.error('Please enter City.');
+                                          $('#city').focus();
+                                          }
+                                          else{
+                                             $('#cityDiv').removeClass('has-error');
 
                                     if (!$scope.state) {
                                       $('#stateDiv').addClass('has-error');
@@ -172,22 +200,18 @@ app.controller('registerCtrl', function($http, $scope, toastr,$location,$window)
                                       else{
                                          $('#stateDiv').removeClass('has-error');
                                          
-                                         if (!$scope.city) {
-                                          $('#cityDiv').addClass('has-error');
-                                          toastr.error('Please enter City.');
-                                          $('#city').focus();
-                                          }
-                                          else{
-                                             $('#cityDiv').removeClass('has-error');
-                                            
+                                          if (!$scope.zip) {
+                                      $('#zipDiv').addClass('has-error');
+                                      toastr.error('Please enter Zip Code.');
+                                      $('#zip').focus();
+                                      }
+                                      else{
+                                         $('#zipDiv').removeClass('has-error');
+
+
+                                            }
                                                  
-                                                  if (!$scope.selectProfile) {
-                                                      $('#profileDiv').addClass('has-error');
-                                                      toastr.error('Please select profile.');
-                                                      $('#selectProfile').focus();
-                                                      }
-                                                     else{
-                                                        $('#profileDiv').removeClass('has-error');
+                                                }
                                                       } 
                                           } 
                                   } 

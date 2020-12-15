@@ -1,5 +1,5 @@
 
-app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
+app.controller('loginCtrl', function($http, $scope, toastr,$window){
    
   // ************** init *************************
   $scope.init = function() {
@@ -8,7 +8,7 @@ app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
  $scope.login = function() {
 
         if ($scope.username && $scope.password)  { 
-          $scope.loader=true;           // toastr.success('Login successfully.');
+          $scope.loader=true;     
             var url = "http://" + $window.location.host + "/index.php/Home/loginUser";
             $http.post(url,{
                
@@ -17,15 +17,16 @@ app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
             }).
                 then((response) => {  
                     console.log(response);
-                    console.log(response.data);
-              if (response.data && response.data["profileType"]=="RETAILER" || response.data["profileType"]=="CUSTOMER") {
+                    console.log(response.data);  
+               if(response.data["profileType"]=="RETAILER"){
                     $scope.loader=false;  
                     toastr.success('Login successfully.');
                     $scope.username="";
                     $scope.password="";                                     
                     var url = 'Shop';
                     window.location = url;                                    
-                }else if (response.data && response.data["profileType"]=="CUSTOMER") {
+                }
+		else if(response.data["profileType"]=="SHOPPER") {
                   $scope.loader=false;  
                   toastr.success('Login successfully.');
                   $scope.username="";
@@ -33,6 +34,15 @@ app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
                   var url = 'AllStores';
                   window.location = url;                                    
               }
+		else if(response.data["profileType"]=="DRIVER") {
+                  $scope.loader=false;  
+                  toastr.success('Login successfully.');
+                  $scope.username="";
+                  $scope.password="";                                     
+                 // var url = 'Home';
+                 // window.location = url;                                    
+              }
+
                 else if (response.data == 0) {
                   $scope.loader=false;  
                     toastr.error('Failed to Login.');
@@ -48,8 +58,11 @@ app.controller('loginCtrl', function($http, $scope, toastr,$location,$window){
                 else {
                   $scope.loader=false;  
                     toastr.error('Opps! Something went wrong!.');
-                    $scope.username="";
-                    $scope.password="";                  
+                     // toastr.success('Login successfully as customer.');
+                  $scope.username="";
+                  $scope.password="";                                     
+                //  var url = 'AllStores';
+                 // window.location = url;                               
                 }            
             }, (error) => {
               $scope.loader=false;               

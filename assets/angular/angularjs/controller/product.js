@@ -18,27 +18,27 @@ app.controller('productCtrl', function($http, $scope, toastr,$window){
         $scope.storeId=$scope.detailsList;
         console.log($scope.storeId);
         $scope.loader=true; 
-         var url = "http://" + $window.location.host + "/index.php/Home/getAllProducts";
+         var urll = "http://" + $window.location.host + "/index.php/Home/getAllProducts";
         $http({
             method:'get',
-            url:window.url,
+            url:urll,
             dataType:"json",
             params:{"storeId": $scope.storeId},
              }).then(function(response){
                 $scope.loader=false;  
                 $scope.productListt = response.data;
-                //console.log($scope.shopList);
+                console.log($scope.productListt);
                 if(response.data['status']=="400"){
                     $scope.loader=false;  
                     toastr.warning("Products are not available");
                 }else if(response.data==0){
-                    toastr.warning("Products are not available");
+                    toastr.warning("Products are not available!");
                 }else{           
                     $scope.loader=false; 
-                     var decodedString = atob($scope.productListt[0]['pictureId']);
-                    console.log(decodedString);  
-                    $scope.productimg= decodedString; 
-                    console.log($scope.productimg);  
+                  //   var decodedString = atob($scope.productListt[0]['pictureId']);
+                  //  console.log(decodedString);  
+                   // $scope.productimg= decodedString; 
+                  //  console.log($scope.productimg);  
                     $scope.productList = $scope.productListt;
                     console.log($scope.productList);
                 }

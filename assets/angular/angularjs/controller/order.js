@@ -9,7 +9,7 @@ app.controller('orderCtrl', function($http, $scope, toastr,$window){
        
         $scope.loader=true; 
          var url = "http://" + $window.location.host + "/index.php/Order/getAllOrders";
-        $http.get(window.url).
+        $http.get(url).
         then((response) => {
             $scope.loader=false;  
             $scope.orderListt = response.data;
