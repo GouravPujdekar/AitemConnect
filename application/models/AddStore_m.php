@@ -1,11 +1,10 @@
-
 <?php
 class AddStore_m extends CI_Model
  {
  function addStore() {
   
     $postData = json_decode(file_get_contents('php://input'));   
-  //  $retailerUserId=$postData->retailerUserId;     
+    //$retailerUserId=$postData->retailerUserId;     
     $email=$postData->email; 
     $phone=$postData->phone;   
     $website=$postData->website;
@@ -15,11 +14,9 @@ class AddStore_m extends CI_Model
     $streetAddress=$postData->streetAddress; 
     $streetAddress1=$postData->streetAddress1; 
     $zip=$postData->zip;      
-    $token=$this->session->userdata('authToken');  
-    $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-   $root="http://".$_SERVER['HTTP_HOST'].":8080";     
-      $urll ="$root";   
-  $url="http://3.139.65.132:8080";
+    $token=$this->session->userdata('api-key-token');  
+    $t="fzCX5UnRIfCaOYEO6B87W4VbZKOG+hw6WmxxIvImWMGEoL21Mc7yXJTIR9EU5o88tmlRE/nR7VXuVi6awnu3+w==";
+    $url = 'http://18.188.222.175:8080/stores';   
     $data = array(
      "address" => array (
              'addressName'=>$addressName,
@@ -31,7 +28,7 @@ class AddStore_m extends CI_Model
      ),
      'email'=>$email,
      'phone'=>$phone,    
-    // 'retailerUserId'=>$retailerUserId, 
+   //  'retailerUserId'=>$retailerUserId, 
      'website'=>$website,    
      );  
     $d=json_encode($data);

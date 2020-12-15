@@ -9,6 +9,9 @@ class AddItem_m extends CI_Model
   
       if(isset($postedData['storeId'])){
           $storeId = $postedData['storeId']; 
+      } 
+      if(isset($postedData['id'])){
+          $Id = $postedData['id']; 
       }      
       if(isset($postedData['name'])){
           $name = $postedData['name']; 
@@ -43,57 +46,37 @@ class AddItem_m extends CI_Model
       if(isset($postedData['weight'])){
          $weight = $postedData['weight']; 
       }           
-    //  $root="http://".$_SERVER['HTTP_HOST'].":8080"; 
-    $root="http://".$_SERVER['HTTP_HOST'];  
-      $urll ="$root"; 
-    $url="http://3.139.65.132:8080"
-      if (!empty($_FILES['file']['name'])) {
-
-       $_FILES['userfile']['name'] = time() . "_" . $_FILES['file']['name'];
-       $_FILES['userfile']['type'] = $_FILES['file']['type'];
-       $_FILES['userfile']['tmp_name'] = $_FILES['file']['tmp_name'];
-       $_FILES['userfile']['error'] = $_FILES['file']['error'];
-       $_FILES['userfile']['size'] = $_FILES['file']['size'];
-       $uploadPath = 'images/item_images/';
-       $config['upload_path'] = $uploadPath;
-       $config['allowed_types'] = '*';
-       $this->load->library('upload', $config);
-       $this->upload->initialize($config);
        
-       if ($this->upload->do_upload('userfile')) {
-          
-          $fileData = $this->upload->data();
-          $uploadData['file_name'] = $fileData['file_name'];
-        
-          $adImage = $urll."/images/item_images/".time() . "_" . $_FILES['file']['name'];
-       }
-    }else{
-        $adImage = $urll."/images/photo1.png";
-    }       
-      if($adImage != ""){
-          $pictureId = $adImage; 
-      }          
-        
-      /*$postData = json_decode(file_get_contents('php://input'));   
-      $storeId=$postData->storeId;     
-      $pictureId=$postData->pictureId; 
-      $name=$postData->name;   
-      $quantity=$postData->quantity;
-      $price=$postData->price; 
-      $description=$postData->description; 
-      $shortDescription=$postData->shortDescription;
-      $sku=$postData->sku; 
-      $status=$postData->status; 
-      $type=$postData->type;  
-      $website=$postData->website; 
-      $visibility=$postData->visibility;
-      $weight=$postData->weight;      */
-      $token=$this->session->userdata('authToken');  
-      $t="TA/0V1TNaFMo+A7vj/zUrilnItgKGt7mB/1XlZbLRuGQHdEXXYCrBtCQ6QIJySWLTs/1PVGwpPNtKTwFDuxCyQ==";
-    
+      $file = $_FILES['file']['name'];
+     
+	
+     $tokenn=$this->session->userdata('api-key-token'); 
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/pictures');
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+      curl_setopt($ch, CURLOPT_POSTFIELDS,$file);     
+      curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$tokenn,'Content-Type: multipart/form-data; boundary=<calculated when request is sent>', 'Accept: application/json'));
+      $out = curl_exec($ch);
+         if ($out === false) {
+         echo 'Curl error : ' . curl_error($ch);
+         }   
+      curl_close($ch);
+      //var_dump($out);
+      $var = json_decode($out, true); 
+      print_r($var);	
+      if(!isset($var['id'])){
+          return -1;
+      } 
+     else{
+     
+         $pictureId  = $var['id']; 
+         $pictureUrl  = $var['url'];
+     	 $token=$this->session->userdata('api-key-token');    
       $data = array(      
        'storeId'=>$storeId,
-       'pictureId'=>$pictureId,    
+       'id'=>$Id,
+       'pictureId'=>$pictureId,
+       'pictureUrl'=>$pictureUrl,    
        'name'=>$name, 
        'quantity'=>$quantity, 
        'price'=>$price, 
@@ -105,14 +88,11 @@ class AddItem_m extends CI_Model
        'website'=>$website, 
        'visibility'=>$visibility, 
        'weight'=>$weight    
-       );  
-   
-      $d=json_encode($data);
-      /* Init cURL resource */
+       );     
+      $d=json_encode($data);   
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/items');
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      // curl_setopt($ch, CURLOPT_GET, true);
+      curl_setopt($ch, CURLOPT_URL, 'http://3.139.65.132:8080/stores/'.$storeId.'/items');
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);   
       curl_setopt($ch, CURLOPT_POSTFIELDS,$d);
       curl_setopt($ch, CURLOPT_HTTPHEADER, array('api-key-token:'.$token,'Content-Type: application/json', 'Accept: application/json'));
       $out = curl_exec($ch);
@@ -121,6 +101,8 @@ class AddItem_m extends CI_Model
          }   
       curl_close($ch);      
       return $out;    
-      }   
+      }
+}
+
 }
 ?>
