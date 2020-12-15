@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="<?php echo base_url('assets/css/c/js/jquery-2.1.4.min.js');?>"></script>
     <script src="<?php echo base_url('assets/css/c/js/bootstrap.min.js');?>"></script>  
-  
+    <title>HopTo | <?php if(isset($title)) echo $title; ?></title>  
 </head><br>
-
 <body ng-app="myApp" ng-controller="cartCtrl" ng-init="init()">
 <div class="container-fluid">
             <div class="col-sm-12">
@@ -19,29 +18,49 @@
                     <div  id="t2">
                         <div>
                       <h4><b><i class="fa fa-home"></i> Add delivery address</b></h4>
-                      <p>choose your delivery address from address book or add new</p>
+			<hr>
+              	<table>
+			<tr>
+				<td><b><u>Adress Name</u>:</b> </td>
+				<td ng-bind="addressList.address.addressName"></td>
+			</tr>
+			<tr>
+				<td><b><u>Street Address</u>:</b> </td>
+				<td ng-bind="addressList.address.streetAddress"></td>
+			</tr>
+			<tr>
+				<td><b><u>Street Address1</u>:</b> </td>
+				<td ng-bind="addressList.address.streetAddress1"></td>
+			</tr>
+			<tr>
+				<td><b><u>City</u>:</b> </td>
+				<td ng-bind="addressList.address.city"></td>
+			</tr>
+			<tr>
+				<td><b><u>State</u>:</b> </td>
+				<td ng-bind="addressList.address.state"></td>
+			</tr>
+			<tr>
+				<td><b><u>Zip</u>:</b> </td>
+				<td ng-bind="addressList.address.zip"></td>
+			</tr>
+		   </table>
                     </div>                   
-                    <div class="address" ><a href="#"id="t3" ><b><i class="fa fa-plus"></i> Add new address</b></a></div>
-                    </div>
-                    <br />
-                   <!-- <div id="t7">
-                        <h4><b>Select Payment Method</b></h4>
-                        <a href="#">Select your payment method from the existing one or add new one</a>
-                    </div>-->
+                 	
+                    </div>  		
+                    <br />                
                 </div>
                 <div class="col-sm-4" >
                     <div id="t4">
-                        <div><h4><b>Your Cart</b>  (<b ng-bind="cartList.items[0].quantity"></b>)</h4> </div>
-                        <div>From <a href="#">Whole Foods Market</a></div>
-                       
-                        <hr />
-                        <div><i class="	fa fa-circle" style="color: blue;">  </i><b ng-bind="cartList.items[0].name"></b>
-                            <div class="number-input">
-                                <button  class="minus" ng-click="plusQty(cartList)"><i class="fa fa-minus" ></i></button>
-                                <input class="quantity" min="0" ng-bind="cartList.items[0].quantity" name="quantity" value="1" type="number">
-                                <button  class="plus" ng-click="plusQty(cartList)"><i class="fa fa-plus"></i></button>
-                            </div>                      
-                        </div>
+                        <h4><b>Your Cart</b>
+			<hr>               
+			<table ng-repeat="c in cartList">
+			<tr ng-repeat="cc in c">							
+				<td ng-bind="cc.name"></td>
+				<td style="padding-left:40px;" ng-bind="cc.quantity">
+ 				</td>                              
+			</tr>			
+		   </table>                       
                     </div>
                     <br />
                     <div id="t5" class="col-sm-12"><i class="fa fa-pencil" style="font-size: 17px;">  Any instruction for the delivery pattern?  </i></div>
@@ -53,15 +72,13 @@
                         <hr />
                         <div>Partner Delivery Fee    <i class="	fa fa-info-circle"></i> <b>Free</b></div>
                         <hr />                        
-                        <p><b>To Pay -</b>    $<b ng-bind="cartList.items[0].price"></b></p>
+                        <p ><b>To Pay -</b>    $<b ng-bind="cartList.total"></b></p>
                         <div class="col-sm-6">
                         </div>
                         <div class="col-sm-3">
-                        <a id="btncheckout" href="<?php echo site_url("Welcome");?>" class="btn btn-primary ">Checkout</a>
-                       
+                        <a id="btncheckout" href="<?php echo site_url("CheckOut");?>" class="btn btn-primary ">Checkout</a>                       
                         </div>
-                      <br>
-                    
+                      <br>                    
                     </div>
                     </div>
                 </div>

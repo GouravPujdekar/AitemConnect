@@ -92,11 +92,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-6" >
             
             <div class="card">
-                <div class="card-header bg-success text-white">Product Information</div>
+                <div class="card-header bg-success text-white">Payment Information</div>
                 <div class="card-body bg-light">
                   
                     <div id="payment-errors"></div>  
-                     <form method="post" id="paymentFrm" enctype="multipart/form-data" action="<?php echo site_url(); ?>/Welcome/check">
+                     <form method="post" id="paymentFrm" enctype="multipart/form-data" action="<?php echo site_url(); ?>/CheckOut/check">
                         <div class="form-group">
                             <input type="text" name="name" class="form-control" placeholder="Name"  required>
                         </div>  

@@ -33,8 +33,9 @@
                                      <button type="submit" class="btn btn-primary" style="height:40px;margin-top:5px;">Proceed</button>
                                      </div>   
                             </div><br>
-                            <p>POPULAR CITIES IN UNITED STATES ALONG WITH ALL THOSE CITIES CITED</p>
-                            <p class="text-justify">Austin,Houston,Chicago,Aurara,Naperville,Joilet & more</p>
+                           <!-- <p>POPULAR CITIES IN UNITED STATES ALONG WITH ALL THOSE CITIES CITED</p>
+                           <p class="text-justify">Austin,Houston,Chicago,Aurara,Naperville,Joilet & more</p>-->
+<p>Get HopTo and get ahead of the competition</p>
                 </div>
                 </div>
                 <div class=" col-lg-6 px-0 " >
@@ -45,7 +46,7 @@
     </section>    
    <section class="call-in-action padding-bottom padding-top  style-two " style="background-image:url('<?php echo base_url('images/way3.jpg');?>');background-size:1000px;">
     <div class="container">
-    <h2>What do you want?</h2><br>
+    <h2><u>What do you want?</u></h2><br>
     <div class="container">
     <div class="row">
          <div class="col-sm-4">       
@@ -184,10 +185,10 @@
 
   <section class="call-in-action padding-bottom padding-top theme-overlay style-two " >
     <div class="container">
-    <h2>Our Gallary</h2><br>
+    <h2><u>Types of Merchants wanted on this platform</u></h2><br>
         <div class="row">
             <div class="col-sm-4">
-              <img src="<?php echo base_url('images/way2.jpg');?>" alt="" style="height:300px;width:300px;">
+              <img src="<?php echo base_url('images/way3.jpg');?>" alt="" style="height:300px;width:300px;">
             </div>
             <div class="col-sm-4">
               <img src="<?php echo base_url('images/way9.jpg');?>" alt="" style="height:300px;width:300px;">

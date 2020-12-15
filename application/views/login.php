@@ -16,9 +16,7 @@
     <script src="<?php echo base_url('assets/angular/ui-bootstrap-tpls-1.0.3.js'); ?>"></script>
     <!-- toastr -->
     <script src="<?php echo base_url('assets/angular/angular-toastr.tpls.js'); ?>"></script>
-    <link rel="stylesheet" href="<?php echo base_url('assets/angular/angular-toastr.css'); ?>" />
-    
-    
+    <link rel="stylesheet" href="<?php echo base_url('assets/angular/angular-toastr.css'); ?>" />       
     <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css');?>">
      <link rel="stylesheet" href="<?php echo base_url('assets/css/all.min.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/animate.css');?>">
@@ -27,8 +25,8 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/odometer.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/swiper.min.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/nice-select.css');?>">
-      <link rel="shortcut icon" href="<?php echo base_url('assets/images/thumbnail.png');?>" type="image/x-icon">
-   
+    <link rel="shortcut icon" href="<?php echo base_url('assets/images/HopTologo.jpg');?>" type="image/x-icon">  
+    <title>HopTo | Login</title> 
 </head>
   <!-- ==========privacy-section========== -->
  <body>
@@ -38,34 +36,43 @@
                 <div class="header-wrapper">
                     <div class="logo">
                         <a href="<?php echo site_url("Home");?>" class="logo">
-                         <img src="<?php echo base_url('assets/images/thumbnail.png');?>" style="height:60px;width:80px;"><b></b>
+                         <img src="<?php echo base_url('assets/images/HopTologo.png');?>" alt="HopTo" ><b></b>
                         </a>
                     </div>
-                      <ul class="menu ml-auto">            
-                       
+                      <ul class="menu ml-auto">           
                     </ul>                   
-                    <ul class="search-area">
-                        <li>
+                    <ul class="search-area">                        
                           <?php
-                                $authToken=  $this->session->userdata('username'); 
-                                if(isset($authToken)){ 
+                                $authToken=$this->session->userdata('username'); 
+$profile=$this->session->userdata('role');
+                                if(isset($authToken) && $profile=="SHOPPER"){ 
                                   ?>
+				<li>
                             <a id="cart-button" href="#0" >
                                 <i class="flaticon-shopping-cart" style="margin-top:5px;"></i>
                             </a>
+				</li>
+				<li>
+			   <a href="<?php echo site_url("Logout");?>" style="margin-left:-8px;">
+                            <i class="fa fa-power-off"></i>Logout1
+                            </a> 
+				</li>
                           <?php }?>
-                        </li>
-                          <li>
-                            <?php $authToken=  $this->session->userdata('username'); 
-                                if(isset($authToken)){ 
+                        </li>                          
+                            <?php $authToken=$this->session->userdata('username');
+$profile=$this->session->userdata('role'); 
+                                if(isset($authToken) && $profile=="RETAILER"){ 
                                   ?>
+				<li>
                              <a href="<?php echo site_url("Logout");?>" style="margin-left:-8px;">
-                            <i class="fa fa-power-off"></i>Logout
-                            </a>                          
+                            <i class="fa fa-power-off"></i>Logout1
+                            </a> 
+				</li>                         
                             <?php } else {?>
+				<li>
                              <a href="<?php echo site_url("Home/Login");?>" style="margin-left:-8px;">
                              Login
-                            </a>
+                            </a></li>
                             <?php }?>
                         </li>
                     </ul>
@@ -78,13 +85,13 @@
             <div class="card card-2">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Welcome To AitemConnect</h2>
+                    <h2 class="title">Welcome To HopTo</h2>
                     <form >
-                        <div class="input-group">
+                        <div class="input-groupp">
                             <input class="input--style-2" type="text" ng-model="username" id="username" placeholder="Username" name="username">
                         </div>
-                        <div class="input-group">
-                            <input class="input--style-2" type="text" ng-model="password" id="password" placeholder="Password" name="password">
+                        <div class="input-groupp">
+                            <input class="input--style-2" type="password" ng-model="password" id="password" placeholder="Password" name="password">
                         </div>
                         <div class="p-t-30">
                             <a class="btn btn--radius btn--green" ng-click="login()" style="color:white;">Login</a>
@@ -92,18 +99,16 @@
                         <div class="row row-space col-12">
                             <div class="col-6">
                                 <div class="input-group">
-                                <p class="mt-2 d-flex flex-wrap justify-content-between">New Member ?<a href="<?php echo site_url('Home/Register')?>"> Register Here</a></p>
+                                <p class="mt-2 d-flex flex-wrap justify-content-between"><b>New Member?</b><a href="<?php echo site_url('Home/Register')?>"> Register Here</a></p>
                                 </div>
-                            </div>
-                           
+                            </div>                           
                         </div>
                     </form>
                     <div class="loading" ng-show="loader" id="loader">Loading&#8230;</div>
                 </div>
             </div>
         </div>
-    </div>
-   
+    </div> 
   
     <!-- Jquery JS-->
     <script src="<?php echo base_url('assets/login/vendor/jquery/jquery.min.js');?>"></script>

@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="<?php echo base_url('assets/css/StyleSheet1.css');?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/css/c/bootstrap.min.css');?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-theme.min.css');?>">
@@ -12,12 +11,7 @@
                    </div>
                   <div class="panel-body" >
                     <form name="store" >
-                        <!--  <div class="form-group">
-                              <label for="inputPassword">Store Name</label>
-                               <input type="text" id="name" ng-model="name"  class="form-control" placeholder="Store Name"required/>
-                             
-                          </div>
-                         -->  <div class="form-group" id="addressNameDiv">
+                        <div class="form-group" id="addressNameDiv">
                                <label>Address Name</label>
                                 <input type="text" id="addressName" ng-model="addressName" class="form-control" placeholder="Address Name"required/>
                             </div>
@@ -53,15 +47,13 @@
                             <div class="form-group" id="mobileDiv">
                                 <label >Mobile number</label>
                                 <input type="text" ng-model="mobile" id="mobile"  placeholder="Phone number"class="form-control"/> 
-                            </div>                             
-                                      
+                            </div>                         
                         </form>
                 </div>
                 <div class="panel ">
                 <div class="panel-footer ">
                   <a href="" class="btn btn-primary" ng-click="addRetailerStore()">Add</a> 
-                </div>
-                
+                </div>                
 <div class="loading" ng-show="loader" id="loader">Loading&#8230;</div>
             </div>
             </div>

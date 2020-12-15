@@ -4,13 +4,11 @@
     <div class="row">
          <div class="col-sm-4 sh">                       
                       <div class="row no-gutters">
-                        <div class="col-md-4">
-                          <img src="<?php echo base_url('assets/images/shop/wood.PNG');?>" class="card-img orderr"  alt="Groceries & Essential">
-                        </div>
+                       
                         <div class="col-md-8">                        
-                            <h5 class="card-title" >Whole Foods Market</h5>
-                            <h7 class="card-title" ng-bind="detailsList[0].address.addressName"></h7>  <br>
-                           <!--  <h7 class="card-title" ><i class="fa fa-clock"></i> 35 mins</h7>-->                       
+                            <u><h5 class="card-title" ng-bind="detailsList[0].address.addressName"></h5></u>
+                            <h7 class="card-title" ng-bind="detailsList[0].address.streetAddress" ></h7>  <br>
+                                              
                         </div>                    
                     </div>    
         </div>  
@@ -26,7 +24,7 @@
                       <div class="card mb-4" >
                       <div class="row no-gutters">
                         <div class="col-md-3">
-                          <img src="{{t.pictureId}}" class="card-imgg"  alt="Groceries & Essential">
+                          <img src="{{t.pictureUrl}}" class="card-imgg"  alt="Groceries & Essential">
                         </div>
                         <div class="col-md-6">
                           <div class="card-body">

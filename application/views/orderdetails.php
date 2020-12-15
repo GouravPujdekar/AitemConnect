@@ -25,7 +25,7 @@
 <div id="Order" class="tabcontent active">
   <h3>Order List</h3>
   <div class="table-responsive">
-      <table class="table">
+      <table class="table" ng-repeat="t in orderList">
       <thead>
               <tr>
                 <th>#</th>               
@@ -37,14 +37,13 @@
                 <th>Status</th>              
               </tr>
               </thead>
-              <tr ng-repeat="t in orderList">
-                <td>{{$index+1}}</td>
-             
+              <tr  ng-repeat="tt in t.items">
+                <td>{{$index+1}}</td>             
                 <td ng-bind="t.id"></td>
-                <td ng-bind="t.items[0].name"></td>
-                <td ng-bind="t.items[0].price"></td>               
-                <td ng-bind="t.items[0].quantity"></td>              
-                <td ng-bind="t.items[0].type"></td> 
+                <td ng-bind="tt.name"></td>
+                <td ng-bind="tt.price"></td>               
+                <td ng-bind="tt.quantity"></td>              
+                <td ng-bind="tt.type"></td> 
                 <td ng-bind="t.orderStatus"></td>               
               </tr>
       </table>
