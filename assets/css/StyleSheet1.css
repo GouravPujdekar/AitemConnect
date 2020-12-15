@@ -27,7 +27,7 @@
 #t4 {
     border: outset 1px;
     border-radius: 8px;
-    height: 200px;
+    height: auto;
     padding: 30px;
 }
 #t5 {
